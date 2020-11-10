@@ -1,0 +1,30 @@
+
+#main-content-home{
+    padding-top: 140px;
+    width: 100%;
+    display: flex;
+    background-color: #ffffff00;
+}
+
+#left-arrow{
+    min-width:20%; 
+}
+
+#main-logo{
+    width: 60%;
+    display: flex;
+    justify-content: center;
+}
+
+#main-logo-background{
+    width: 406px;
+    height: 406px;
+    border-radius: 405px;
+    background-color: #000000;
+}
+
+#logo{
+    height: 400px;
+    margin-top: 3px;
+    margin-left: 3px;
+}
