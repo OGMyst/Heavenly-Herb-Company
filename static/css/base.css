@@ -1,11 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@1,700&display=swap');
 
-html {
-    height: 100%;
-    background: url('/media/home-background.jpg') no-repeat center center fixed;
-    background-size: cover;
-}
-
 body{
     background-color: transparent;
     font-family: 'Noto Sans', sans-serif;
@@ -58,4 +52,8 @@ header:hover{
     color: #ffffff;
     text-shadow: 1px 1px #000000;
     font-size: 1.1rem;
+}
+
+.margin-for-nav{
+    margin-top: 100px;
 }

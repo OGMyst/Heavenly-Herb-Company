@@ -1,0 +1,5 @@
+html {
+    height: 100%;
+    background: url('/media/alt-background.jpg') no-repeat center center fixed;
+    background-size: cover;
+}

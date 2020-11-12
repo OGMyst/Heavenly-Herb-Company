@@ -1,9 +1,13 @@
+html {
+    height: 100%;
+    background: url('/media/home-background.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
 
 #main-content-home{
-    padding-top: 140px;
     width: 100%;
     display: flex;
-    background-color: #ffffff00;
+    margin-top: 140px;
 }
 
 #left-arrow{
