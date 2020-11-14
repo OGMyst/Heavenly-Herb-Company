@@ -30,6 +30,17 @@
                         <div class="img-box">
                             <img class="product-img" src="{{ product.image.url }}" alt="{{ product.name }}">
                         </div>
+                        <div class="card-right-box">
+                            <div class="text-box">
+                                <h6>{{ product.name }}</h6>
+                                <p>£{{ product.price }}</p>
+                            </div>
+                            <a href="#">
+                                <div class="add-item-btn">
+                                    <h5 class="add-item-text">Add to Basket</h5>
+                                </div>
+                            </a>
+                        </div>
                     </div>
             {% endfor%}
     </div>
