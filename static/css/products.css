@@ -1,5 +1,26 @@
 html {
-    height: 100%;
     background: url('/media/alt-background.jpg') no-repeat center center fixed;
     background-size: cover;
+}
+.sub-nav{
+    margin-top: 20px;
+    padding: 10px 15px;
+}
+.products-container{
+    flex-wrap:wrap;
+    padding-top: 10px;
+}
+
+.product-card{
+    width: 24%;
+    margin-bottom: 5px;
+}
+
+.img-box{
+    max-width: 80px;
+    overflow: hidden;
+}
+
+.product-img{
+    height: 100px;
 }

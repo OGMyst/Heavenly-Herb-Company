@@ -5,17 +5,22 @@ body{
     font-family: 'Noto Sans', sans-serif;
 }
 
+.bg-blue{
+    background-color: #7196CE;
+}
+
+.bg-off-white{
+    background-color: #f8f8f8;
+}
 .dark-overlay{
     background: rgba(0, 0, 0, 0.2);
     width:100%;
-    height: 120vh;
+    height:120vh;
     top: 0;
     left: 0;
     right: 0;
-    justify-content: center;
-    align-items: center;
     position: fixed;
-    z-index: 2;
+    z-index: -1;
 }
 header{
     border-bottom: solid 3px #000000;
@@ -56,4 +61,10 @@ header:hover{
 
 .margin-for-nav{
     margin-top: 100px;
+}
+
+footer{
+    margin-top:auto;
+    min-height: 100px;
+    bottom: 0;
 }

@@ -4,12 +4,33 @@
 {% block extra_css %}
     <link rel="stylesheet" href="{% static 'css/products.css' %}">
 {% endblock %}
-
 {% block page_header %}
     <div class="container-fluid margin-for-nav">
         <h1>Products</h1>
     </div>
 {% endblock %}
-
 {% block content %}
+    <div class="container-fluid bg-blue sub-nav">
+        <div class="row">
+            <div class="col-2">
+                <h5>Categories</h5>
+            </div>
+            <div class="col-3">
+                <h5>Sort By</h5>
+            </div>
+            <div class="col-3">
+            </div>
+            <div class="col-3">
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid bg-off-white d-flex products-container">
+            {% for product in products%}
+                    <div class="product-card d-flex">
+                        <div class="img-box">
+                            <img class="product-img" src="{{ product.image.url }}" alt="{{ product.name }}">
+                        </div>
+                    </div>
+            {% endfor%}
+    </div>
 {% endblock %}
