@@ -2,6 +2,7 @@ html {
     background: url('/media/alt-background.jpg') no-repeat center center fixed;
     background-size: cover;
 }
+
 .sub-nav{
     margin-top: 20px;
     padding: 10px 15px;
@@ -16,11 +17,12 @@ html {
     margin-bottom: 5px;
 }
 
-.img-box{
+/* .img-box{
     max-width: 80px;
     overflow: hidden;
-}
+} */
 
 .product-img{
-    height: 100px;
+    height: 130px;
+    width: 100px;
 }
