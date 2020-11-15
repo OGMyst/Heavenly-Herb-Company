@@ -10,20 +10,60 @@
     </div>
 {% endblock %}
 {% block content %}
+
+<!----------------------------- SUB-NAVBAR -------------------------->
+
     <div class="container-fluid bg-blue sub-nav">
         <div class="row">
             <div class="col-2">
-                <h5>Categories</h5>
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton-Categories" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Categories
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            {% for category in categories %}
+                                <a class="dropdown-item" href="{% url 'products' %}?category={{ category.name }}">
+                                    {{ category.friendly_name }}
+                                </a>
+                            {% endfor %}
+                        </div>
+                    </button>
+                </div>
             </div>
-            <div class="col-3">
-                <h5>Sort By</h5>
+            <div class="col-2">
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton-sort" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Sort By
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="{% url 'products' %}?sort=price_asc">Price (low to high)</a>
+                        <a class="dropdown-item" href="{% url 'products' %}?sort=price_desc">Price (high to low)</a>
+                        <a class="dropdown-item" href="{% url 'products' %}?sort=name_asc">Name (A-Z)</a>
+                        <a class="dropdown-item" href="{% url 'products' %}?sort=name_desc">Name (Z-A)</a>                    
+                    </div>
+                </div>
             </div>
-            <div class="col-3">
+            
+            <div class="col-4 my-auto py-1 py-lg-0">
+                <form method="GET" action="#">
+                        <div class="input-group w-100">
+                            <input class="form-control border border-black rounded-0" type="text" name="q" placeholder="Search our products">
+                            <div class="input-group-append">
+                                <button class="form-control btn btn-black border border-black rounded-0" type="submit">
+                                    <span class="icon">
+                                        <i class="fas fa-search"></i>
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
             </div>
             <div class="col-3">
             </div>
         </div>
     </div>
+
+<!----------------------------- PRODUCTS -------------------------->
+
     <div class="container-fluid bg-off-white d-flex products-container">
             {% for product in products%}
                     <div class="product-card d-flex">
