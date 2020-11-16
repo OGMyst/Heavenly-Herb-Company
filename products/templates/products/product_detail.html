@@ -4,18 +4,14 @@
 {% block extra_css %}
     <link rel="stylesheet" href="{% static 'css/products.css' %}">
 {% endblock %}
-{% block page_header %}
-    <div class="container-fluid margin-for-nav">
-        <h1>Products</h1>
-    </div>
-{% endblock %}
 {% block content %}
 
 <!----------------------------- SUB-NAVBAR -------------------------->
 
-    <div class="container-fluid bg-blue sub-nav">
+    <div class="container-fluid bg-blue pd-sub-nav">
         <div class="row">
             <div class="col-2">
+            </div>
             <div class="col-2">
             </div>
             
@@ -38,7 +34,15 @@
 
 <!----------------------------- PRODUCT -------------------------->
 
-    <div class="container-fluid bg-off-white d-flex products-container">
-            
+    <div class="container-fluid bg-off-white d-flex pd-container">
+            <div class="pd-image-container">
+                <img class="pd-image" src="{{ product.image.url }}">
+            </div>
+            <div class="pd-right-container">
+                <h3> {{ product.name }}</h3>
+                <p class="pd-desc"><strong>Description:</strong> {{ product.description }} </p>
+                <p class="pd-desc"><strong>Instructions for use:</strong> {{ product.directions }} </p>
+                <p class="pd-desc"><strong>Ingredients:</strong> {{ product.ingredients }} </p>
+            </div>
     </div>
 {% endblock %}

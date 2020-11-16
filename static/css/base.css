@@ -1,9 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital@1&display=swap');
 
 body{
     background-color: transparent;
     font-family: 'Noto Sans', sans-serif;
+    font-weight: 400;
 }
+
 
 .bg-blue{
     background-color: #7196CE;

@@ -65,9 +65,11 @@
     <div class="container-fluid bg-off-white d-flex products-container">
             {% for product in products%}
                     <div class="product-card d-flex">
-                        <div class="img-box">
-                            <img class="product-img" src="{{ product.image.url }}" alt="{{ product.name }}">
-                        </div>
+                        <a href="{% url 'product_detail' product.id %}">
+                            <div class="img-box">
+                                <img class="product-img" src="{{ product.image.url }}" alt="{{ product.name }}">
+                            </div>
+                        </a>
                         <div class="card-right-box">
                             <div class="text-box">
                                 <h6>{{ product.name }}</h6>
