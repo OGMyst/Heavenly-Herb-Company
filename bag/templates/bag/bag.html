@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/products.css' %}">
+{% endblock %}
+
+{% block page_header %}
+    <div class="container-fluid margin-for-nav">
+        <h1>Your Basket</h1>
+    </div>
+{% endblock %}
+
+{% block content %}
+
+<!----------------------------- SUB-NAVBAR -------------------------->
+
+    <div class="container-fluid bg-blue sub-nav">
+        <div class="row">
+            <div class="col-2">
+            </div>
+            <div class="col-2">
+            </div>
+            
+            <div class="col-4 my-auto py-1 py-lg-0">
+                <form method="GET" action="#">
+                        <div class="input-group w-100">
+                            <input class="form-control border border-black rounded-0" type="text" name="q" placeholder="Search our products">
+                            <div class="input-group-append">
+                                <button class="form-control btn btn-black border border-black rounded-0" type="submit">
+                                    <span class="icon">
+                                        <i class="fas fa-search"></i>
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+            </div>
+        </div>
+    </div>
+
+<!----------------------------- PRODUCT -------------------------->
+
+    <div class="container-fluid bg-off-white d-flex pd-container justify-content-center">
+        {% if bag_items %}
+        {% else %}
+            <p>There are no Items in your Bag</p>
+        {% endif %}
+    </div>
+{% endblock %}
