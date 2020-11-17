@@ -45,13 +45,13 @@
     <div class="container-fluid bg-off-white d-flex pd-container justify-content-center">
         {% if bag_items %}
         {% else %}
-            <div class="text-center">
-            <p >There are no items in your basket</p>
-            <button class="btn green-button">
-                <a class="gold-text" href="{% url 'products' %}">
-                    Return to shop
-                </a>
-            </button>
+            <div class="text-center basket-no-item">
+                <p >There are no items in your basket</p>
+                <button class="btn green-button">
+                    <a class="gold-text" href="{% url 'products' %}">
+                        Return to shop
+                    </a>
+                </button>
             </div>
         {% endif %}
     </div>
