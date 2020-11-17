@@ -3,6 +3,7 @@
 
 {% block extra_css %}
     <link rel="stylesheet" href="{% static 'css/products.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bag.css' %}">
 {% endblock %}
 
 {% block page_header %}
@@ -39,12 +40,19 @@
         </div>
     </div>
 
-<!----------------------------- PRODUCT -------------------------->
+<!----------------------------- Basket -------------------------->
 
     <div class="container-fluid bg-off-white d-flex pd-container justify-content-center">
         {% if bag_items %}
         {% else %}
-            <p>There are no Items in your Bag</p>
+            <div class="text-center">
+            <p >There are no items in your basket</p>
+            <button class="btn green-button">
+                <a class="gold-text" href="{% url 'products' %}">
+                    Return to shop
+                </a>
+            </button>
+            </div>
         {% endif %}
     </div>
 {% endblock %}

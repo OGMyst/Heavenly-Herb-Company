@@ -6,6 +6,17 @@ body{
     font-weight: 700;
 }
 
+h1, h6, .btn{
+    font-weight: 700;
+}
+
+.green-button{
+    background-color: #18451C;
+}
+
+.gold-text{
+    color: #FBD300;
+}
 
 .bg-blue{
     background-color: #7196CE;
@@ -66,7 +77,8 @@ header:hover{
 }
 
 footer{
-    margin-top:auto;
-    min-height: 100px;
+    padding: 15px 10px;
+    height: 80px;
     bottom: 0;
+    position: absolute;
 }
