@@ -125,7 +125,7 @@
             </div> -->
         </header>
 
-        <!-- {% if messages %}
+        {% if messages %}
         <div class="message-container">
             {% for message in messages %}
                 {% with message.level as level %}
@@ -141,7 +141,7 @@
                 {% endwith %}
             {% endfor %}
         </div>
-    {% endif %} -->
+    {% endif %}
     
     {% block page_header %}
     {% endblock %}
@@ -152,11 +152,11 @@
     <footer class="bg-blue">
         <p>Copyright  2020 Heavenly Herbs Company. All Rights Reserved</p>
     </footer>
-    <!-- {% block postloadjs %}
+    {% block postloadjs %}
     <script type="text/javascript">
         $('.toast').toast('show');
     </script>
-    {% endblock %} -->
+    {% endblock %}
 
     
   </body>
