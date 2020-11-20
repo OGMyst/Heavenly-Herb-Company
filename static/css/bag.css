@@ -2,3 +2,31 @@
     margin: 100px 0;
     font-size: 1.2;
 }
+
+.basket-box{
+    width: 75%;
+    border: solid 3px #000000;
+    border-top: solid 3px #000000;
+    border-bottom-width: 1px;
+}
+
+.basket-top{
+    padding: 5px 10px;
+    border-top-width: 2px;
+    border-bottom: solid 3px #000000;
+    margin: 0 0;
+}
+
+.img-box{
+    margin-right: 10px;
+}
+
+.item-summary{
+    padding: 10px 5px;
+    border-bottom: solid 2px #000000;
+    margin: 0 0;
+}
+
+.btn{
+    width: 100%
+}

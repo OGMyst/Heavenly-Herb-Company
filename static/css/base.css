@@ -12,6 +12,7 @@ h1, h6, .btn{
 
 .green-button{
     background-color: #18451C;
+    border-radius: 10px;
 }
 
 .gold-text{
@@ -78,7 +79,9 @@ header:hover{
 
 footer{
     padding: 15px 10px;
-    height: 80px;
+    height: 50px;
+    width: 100%;
+    overflow: hidden;
     bottom: 0;
-    position: absolute;
+    position: relative;
 }

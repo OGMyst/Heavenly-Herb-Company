@@ -44,6 +44,80 @@
 
     <div class="container-fluid bg-off-white d-flex pd-container justify-content-center">
         {% if bag_items %}
+            <div class="basket-box">
+                <div class="row basket-top">
+                    <div class="col-6">
+                        <h6>Items</h6>
+                    </div>
+                    <div class="col-2">
+                        <h6>Price £</h6>
+                    </div>
+                    <div class="col-2">
+                        <h6>Quantity</h6>
+                    </div>
+                    <div class="col-2">
+                        <h6>Sub-Total</h6>
+                    </div>
+                </div>
+                {% for bag_item in bag_items %}
+                    <div class="row item-summary">
+                        <div class="col-6 d-flex">
+                            <a href="#"> 
+                                <div class="img-box">
+                                    <img class="product-img" src="{{ bag_item.product.image.url }}" alt="{{ bag_item.product.name }}">
+                                </div>
+                            </a>
+                            <h6> {{ bag_item.product.name }}</h6>
+                        </div>
+                        <div class="col-2">
+                            <p>{{ bag_item.product.price }}</p>
+                        </div>
+                        <div class="col-2">
+                            <p>{{ bag_item.quantity }}</p>
+                        </div>
+                        <div class="col-2">
+                            <h6>{{ bag_item.sub_total }}</h6>
+                        </div>
+                    </div>
+                {% endfor %}
+                <div class="row basket-top">
+                    <div class="col-6">
+                    </div>
+                    <div class="col-2">
+                        <h6>Delivery £</h6>
+                    </div>
+                    <div class="col-2">
+                        <h6>No. Items</h6>
+                    </div>
+                    <div class="col-2">
+                        <h6>Total</h6>
+                    </div>
+                </div>
+                <div class="row item-summary">
+                    <div class="col-6">
+                        <a href="{% url 'products' %}" class="btn btn-outline-black">
+                            <span class="icon">
+                                <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="text-uppercase ">Keep Shopping</span>
+                        </a>
+                        <a href="#">
+                            <div class="add-item-btn mt-2">
+                                <h5 class="add-item-text">Continue to Secure Checkout</h5>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-2">
+                        <p></p>
+                    </div>
+                    <div class="col-2">
+                        <p>{{ product_count }}</p>
+                    </div>
+                    <div class="col-2">
+                            <h6>{{ total }}</h6>
+                    </div>
+                </div>
+            </div>
         {% else %}
             <div class="text-center basket-no-item">
                 <p >There are no items in your basket</p>
