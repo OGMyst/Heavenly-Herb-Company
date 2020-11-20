@@ -77,6 +77,16 @@ header:hover{
     margin-top: 100px;
 }
 
+.message-container{
+    display: flex;
+    position: absolute;
+    right: 0;
+}
+
+.toast-body{
+    max-height: 550px;
+    overflow-y: scroll;
+}
 footer{
     padding: 15px 10px;
     height: 50px;
