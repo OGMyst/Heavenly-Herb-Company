@@ -3,8 +3,9 @@ $(document).ready(function(){
     var allQtyInputs = $('.qty_input');
     for(var i = 0; i < allQtyInputs.length; i++){
         var itemId = $(allQtyInputs[i]).data('item_id');
+        handleEnableDisable(itemId)
     }
-    handleEnableDisable(itemId)
+        
 });
 
 // Disable +/- buttons outside 1-99 range
