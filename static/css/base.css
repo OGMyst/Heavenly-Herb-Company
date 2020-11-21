@@ -83,9 +83,10 @@ header:hover{
     right: 0;
 }
 
-.toast-body{
-    max-height: 550px;
+.bag-notification-wrapper{
+    max-height: 250px;
     overflow-y: scroll;
+    overflow-x: hidden;
 }
 footer{
     padding: 15px 10px;
