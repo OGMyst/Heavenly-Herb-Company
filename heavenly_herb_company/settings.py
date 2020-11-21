@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'home',
     'products',
     'bag',
+    'checkout',
 ]
 
 MIDDLEWARE = [
@@ -156,3 +157,12 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+# Stripe
+FREE_DELIVERY_THRESHOLD_UK = 40
+FREE_DELIVERY_THRESHOLD_EU = 50
+FREE_DELIVERY_THRESHOLD_WORLD = 80
+
+STANDARD_DELIVERY_COST_UK = 4
+STANDARD_DELIVERY_COST_EU = 9.95
+STANDARD_DELIVERY_COST_WORLD = 25
