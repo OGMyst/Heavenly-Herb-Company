@@ -49,13 +49,13 @@
                     <div class="col-6">
                         <h6>Items</h6>
                     </div>
-                    <div class="col-2">
+                    <div class="col-2 d-flex justify-content-center">
                         <h6>Price £</h6>
                     </div>
-                    <div class="col-2">
+                    <div class="col-2 d-flex justify-content-center">
                         <h6>Quantity</h6>
                     </div>
-                    <div class="col-2">
+                    <div class="col-2 d-flex justify-content-center">
                         <h6>Sub-Total</h6>
                     </div>
                 </div>
@@ -69,13 +69,44 @@
                             </a>
                             <h6> {{ bag_item.product.name }}</h6>
                         </div>
-                        <div class="col-2">
+                        <div class="col-2 d-flex justify-content-center">
                             <p>{{ bag_item.product.price }}</p>
                         </div>
                         <div class="col-2">
-                            <p>{{ bag_item.quantity }}</p>
+                            <form id="update-form-{{ bag_item.item_id }}" class="form" action="{% url 'adjust_bag' bag_item.item_id %}" method="POST">
+                                {% csrf_token %} 
+                                <div class="form-row">
+                                    <div class="col-12 d-flex">
+                                        <div class="form-group">
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <button type="button" class="decrement-qty btn btn-black rounded-0" 
+                                                            data-item_id="{{ bag_item.item_id }}" id="decrement-qty_{{ bag_item.item_id }}"
+                                                            onclick="decrementQty('decrement-qty_{{ bag_item.item_id }}')">
+                                                        <span class="icon">
+                                                            <i class="fas fa-minus"></i>
+                                                        </span>
+                                                    </button>
+                                                </div>
+                                                <input class="form-control qty_input" type="" name="quantity" 
+                                                        value="{{ bag_item.quantity }}" min="1" max="99" data-item_id="{{ bag_item.item_id }}" id="id_qty_{{ bag_item.item_id }}">
+                                                <div class="input-group-append">
+                                                    <button type="button" class="increment-qty btn btn-black rounded-0"
+                                                            data-item_id="{{ bag_item.item_id }}" id="increment-qty_{{ bag_item.item_id }}" 
+                                                            onclick="incrementQty('increment-qty_{{ bag_item.item_id }}')">
+                                                        <span class="icon">
+                                                            <i class="fas fa-plus"></i>
+                                                        </span>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a class="update-link text-info" onclick="changeQuantity('update-form-{{ bag_item.item_id }}')"><small>Update</small></a>
+                            </form>
                         </div>
-                        <div class="col-2">
+                        <div class="col-2 d-flex justify-content-center">
                             <h6>{{ bag_item.sub_total }}</h6>
                         </div>
                     </div>
@@ -83,13 +114,13 @@
                 <div class="row basket-top">
                     <div class="col-6">
                     </div>
-                    <div class="col-2">
+                    <div class="col-2 d-flex justify-content-center">
                         <h6>Delivery £</h6>
                     </div>
-                    <div class="col-2">
+                    <div class="col-2 d-flex justify-content-center">
                         <h6>No. Items</h6>
                     </div>
-                    <div class="col-2">
+                    <div class="col-2 d-flex justify-content-center">
                         <h6>Total</h6>
                     </div>
                 </div>
@@ -107,13 +138,13 @@
                             </div>
                         </a>
                     </div>
-                    <div class="col-2">
+                    <div class="col-2 d-flex justify-content-center">
                         <p></p>
                     </div>
-                    <div class="col-2">
+                    <div class="col-2 d-flex justify-content-center">
                         <p>{{ product_count }}</p>
                     </div>
-                    <div class="col-2">
+                    <div class="col-2 d-flex justify-content-center">
                             <h6>{{ total }}</h6>
                     </div>
                 </div>
@@ -129,4 +160,11 @@
             </div>
         {% endif %}
     </div>
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+<script type="text/javascript" src="{% static 'js/quantity_input.js' %}" ></script>
+<script type="text/javascript" src="{% static 'js/update_bag.js' %}" ></script>
+
 {% endblock %}
