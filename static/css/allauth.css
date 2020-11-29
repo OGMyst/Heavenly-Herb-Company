@@ -3,3 +3,19 @@ html {
     background: url('/media/home-background.jpg') no-repeat center center fixed;
     background-size: cover;
 }
+
+.login-container{
+    margin-top: 83px;
+    padding: 50px 0 100px;
+    justify-content: center;
+}
+
+.control-group{
+    margin-bottom: 20px;
+}
+
+.textinput{
+    border-radius: 5px;
+    border: solid 2px black;
+    padding: 4px 7px;
+}

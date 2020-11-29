@@ -36,6 +36,11 @@ h1, h6, .btn{
 .bg-off-white{
     background-color: #f8f8f8;
 }
+
+.blue-border{
+    border-top: solid 4px #7196CE;
+}
+
 .dark-overlay{
     background: rgba(0, 0, 0, 0.2);
     width:100%;
