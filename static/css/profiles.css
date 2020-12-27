@@ -1,0 +1,8 @@
+html {
+    background: url('/media/alt-background.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+.profile-container{
+    padding-top: 20px;
+}
