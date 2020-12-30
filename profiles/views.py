@@ -8,8 +8,11 @@ def profile(request):
     """ Display the user's profile. """
     profile = get_object_or_404(UserProfile, user=request.user)
 
-    Generalform = UserProfileGeneralForm(instance=profile)
-
+    Generalform = UserProfileGeneralForm(initial={
+                    'full_name': profile.user.get_full_name(),
+                    'email': profile.user.email,
+                    'phone_number': profile.default_phone_number,
+    })
     template = 'profiles/profile.html'
     context = {
         'general_form': Generalform,
