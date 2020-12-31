@@ -2,7 +2,7 @@ from django import forms
 from .models import UserProfile
 
 
-class UserProfileGeneralForm(forms.ModelForm):
+class UserGeneralForm(forms.ModelForm):
     class Meta:
         model = UserProfile
         fields = ('full_name', 'email', 'phone_number')
@@ -27,7 +27,7 @@ class UserProfileGeneralForm(forms.ModelForm):
             self.fields[field].label = False
 
 
-class UserProfileAddressForm(forms.ModelForm):
+class UserAddressForm(forms.ModelForm):
     class Meta:
         model = UserProfile
         fields = ('default_street_address1',
