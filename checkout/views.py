@@ -9,7 +9,7 @@ from profiles.models import UserProfile
 from .models import OrderLineItem
 
 from .forms import OrderForm, Order
-from profiles.forms import UserAddressForm, UserGeneralForm
+from profiles.forms import UserAddressForm
 from bag.contexts import bag_contents
 
 import stripe
@@ -134,16 +134,6 @@ def checkout_success(request, order_number):
 
         # Save the user's info
         if save_info:
-            # profile_general_data = {
-            #     'default_phone_number': order.phone_number,
-            # }
-            # user_general_form = UserGeneralForm(profile_general_data,
-            #                                     instance=profile)
-            # if user_general_form.is_valid():
-            #     user_general_form.save()
-            # else:
-            #     print('general failed')
-
             profile_address_data = {
                 'default_country': order.country,
                 'default_postcode': order.postcode,

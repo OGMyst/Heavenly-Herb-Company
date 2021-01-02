@@ -10,12 +10,12 @@ from checkout.models import Order
 def profile(request):
     """ Display the user's profile. """
     profile = get_object_or_404(UserProfile, user=request.user)
-    orders = profile.orders.all()
+    orders = profile.orders.all()[:5]
 
     Generalform = UserGeneralForm(initial={
                     'full_name': profile.user.get_full_name(),
                     'email': profile.user.email,
-                    'phone_number': profile.default_phone_number,
+                    'default_phone_number': profile.default_phone_number,
     })
 
     Addressform = UserAddressForm(initial={
