@@ -9,7 +9,7 @@ from profiles.models import UserProfile
 from .models import OrderLineItem
 
 from .forms import OrderForm, Order
-from profiles.forms import UserAddressForm
+from profiles.forms import UserAddressForm, UserGeneralForm
 from bag.contexts import bag_contents
 
 import stripe
@@ -133,40 +133,29 @@ def checkout_success(request, order_number):
         order.save()
 
         # Save the user's info
-        # if save_info:
+        if save_info:
             # profile_general_data = {
             #     'default_phone_number': order.phone_number,
-            # }
-
-            # profile_address_data = {
-            #     'default_country': order.country,
-            #     'default_postcode': order.postcode,
-            #     'default_town_or_city': order.town_or_city,
-            #     'default_street_address1': order.street_address1,
-            #     'default_street_address2': order.street_address2,
-            #     'default_county': order.county,
             # }
             # user_general_form = UserGeneralForm(profile_general_data,
             #                                     instance=profile)
             # if user_general_form.is_valid():
             #     user_general_form.save()
+            # else:
+            #     print('general failed')
 
-            # user_address_form = UserAddressForm(profile_address_data,
-            #                                     instance=profile)
-            # if user_address_form.is_valid():
-            #     user_address_form.save()
-
-            # profile_data = {
-            #     'default_country': order.country,
-            #     'default_postcode': order.postcode,
-            #     'default_town_or_city': order.town_or_city,
-            #     'default_street_address1': order.street_address1,
-            #     'default_street_address2': order.street_address2,
-            #     'default_county': order.county,
-            # }
-            # user_profile_form = UserAddressForm(profile_data, instance=profile)
-            # if user_profile_form.is_valid():
-            #     user_profile_form.save()
+            profile_address_data = {
+                'default_country': order.country,
+                'default_postcode': order.postcode,
+                'default_town_or_city': order.town_or_city,
+                'default_street_address1': order.street_address1,
+                'default_street_address2': order.street_address2,
+                'default_county': order.county,
+            }
+            user_address_form = UserAddressForm(profile_address_data,
+                                                instance=profile)
+            if user_address_form.is_valid():
+                user_address_form.save()
 
     messages.success(request, f'Order successfully processed! \
         Your order number is {order_number}. A confirmation \

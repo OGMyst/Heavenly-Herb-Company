@@ -19,12 +19,12 @@ def profile(request):
     })
 
     Addressform = UserAddressForm(initial={
-                    'street_address1': profile.default_street_address1,
-                    'street_address2': profile.default_street_address2,
-                    'town_or_city': profile.default_town_or_city,
-                    'county': profile.default_county,
-                    'country': profile.default_country,
-                    'postcode': profile.default_postcode,
+                    'default_street_address1': profile.default_street_address1,
+                    'default_street_address2': profile.default_street_address2,
+                    'default_town_or_city': profile.default_town_or_city,
+                    'default_county': profile.default_county,
+                    'default_country': profile.default_country,
+                    'default_postcode': profile.default_postcode,
     })
 
     template = 'profiles/profile.html'
