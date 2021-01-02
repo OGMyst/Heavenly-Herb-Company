@@ -10,6 +10,22 @@ from checkout.models import Order
 def profile(request):
     """ Display the user's profile. """
     profile = get_object_or_404(UserProfile, user=request.user)
+
+    if request.method == 'POST':
+        form_value = request.POST.get('update-form')
+        print(form_value)
+        if form_value == "general-update-form":
+            form = UserGeneralForm(request.POST, instance=profile)
+            if form.is_valid():
+                form.save()
+                messages.success(request, 'Profile updated successfully')
+
+        elif form_value == "address-update-form":
+            form = UserAddressForm(request.POST, instance=profile)
+            if form.is_valid():
+                form.save()
+                messages.success(request, 'Address updated successfully')
+
     orders = profile.orders.all()[:5]
 
     Generalform = UserGeneralForm(initial={
