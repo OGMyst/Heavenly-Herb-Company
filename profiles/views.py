@@ -26,7 +26,9 @@ def profile(request):
                 form.save()
                 messages.success(request, 'Address updated successfully')
 
-    orders = profile.orders.all()[:5]
+    allOrders = profile.orders.all()
+
+    orders = allOrders.order_by('date').reverse()[:5]
 
     Generalform = UserGeneralForm(initial={
                     'full_name': profile.user.get_full_name(),
