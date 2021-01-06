@@ -66,9 +66,15 @@
             {% for product in products%}
                     <div class="product-card d-flex">
                         <a href="{% url 'product_detail' product.id %}">
+                            {% if product.image %}
                             <div class="img-box">
                                 <img class="product-img" src="{{ product.image.url }}" alt="{{ product.name }}">
                             </div>
+                            {% else %}
+                            <div class="img-box">
+                                <img class="product-img" src="{{ MEDIA_URL }}noimage.jpg" alt="{{ product.name }}">
+                            </div>
+                            {% endif %}
                         </a>
                         <div class="card-right-box">
                             <div class="text-box">

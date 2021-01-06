@@ -35,9 +35,15 @@
 <!----------------------------- PRODUCT -------------------------->
 
     <div class="container-fluid bg-off-white d-flex pd-container">
+            {% if product.image %}
             <div class="pd-image-container">
                 <img class="pd-image" src="{{ product.image.url }}">
             </div>
+            {% else %}
+            <div class="pd-image-container">
+                <img class="pd-image" src="{{ MEDIA_URL }}noimage.jpg" alt="{{ product.name }}">
+            </div>
+            {% endif %}
             <div class="pd-right-container">
                 <h3> {{ product.name }}</h3>
                 <p class="pd-desc"><strong>Description:</strong> {{ product.description }} </p>
