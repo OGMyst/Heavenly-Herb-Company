@@ -13,18 +13,18 @@ def profile(request):
 
     if request.method == 'POST':
         form_value = request.POST.get('update-form')
-        print(form_value)
         if form_value == "general-update-form":
             form = UserGeneralForm(request.POST, instance=profile)
             if form.is_valid():
                 form.save()
                 messages.success(request, 'Profile updated successfully')
-
         elif form_value == "address-update-form":
             form = UserAddressForm(request.POST, instance=profile)
             if form.is_valid():
                 form.save()
                 messages.success(request, 'Address updated successfully')
+        else:
+            messages.error(request, 'Update failed. Please ensure the form is valid.')
 
     allOrders = profile.orders.all()
 

@@ -1,0 +1,12 @@
+.add_product_form{
+    flex-wrap: wrap;
+}
+
+.control-group{
+    width: 30%;
+    margin-right: 3%;
+}
+
+.add-product-confirm{
+    padding-top: 30px;
+}
