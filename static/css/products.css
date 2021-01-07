@@ -64,6 +64,11 @@ h5{
 .edit-delete-product{
     padding: 5px;
 }
+
+#div_id_image > .controls {
+    display: flex;
+    flex-wrap: wrap;
+}
 /* -----------------------------------PRODUCT_DETAIL---------------------------- */
 .pd-sub-nav{
     margin-top: 83px;
