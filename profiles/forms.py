@@ -1,5 +1,5 @@
 from django import forms
-from .models import UserProfile
+from .models import UserProfile, Address
 
 
 class UserGeneralForm(forms.ModelForm):
@@ -51,6 +51,37 @@ class UserAddressForm(forms.ModelForm):
         }
 
         self.fields['default_street_address1'].widget.attrs['autofocus'] = True
+        for field in self.fields:
+            placeholder = placeholders[field]
+            self.fields[field].widget.attrs['placeholder'] = placeholder
+            self.fields[field].widget.attrs['class'] = 'profile-form-input'
+            self.fields[field].label = False
+
+
+class AddressForm(forms.ModelForm):
+    class Meta:
+        model = Address
+        fields = ('street_address1',
+                  'street_address2',
+                  'town_or_city',
+                  'county',
+                  'postcode')
+
+    def __init__(self, *args, **kwargs):
+        """
+        Add placeholders and classes, remove auto-generated
+        labels and set autofocus on first field
+        """
+        super().__init__(*args, **kwargs)
+        placeholders = {
+            'street_address1': 'Street Address 1',
+            'street_address2': 'Street Address 2',
+            'town_or_city': 'Town or City',
+            'county': 'County, State or Locality',
+            'postcode': 'Postal Code',
+        }
+
+        self.fields['street_address1'].widget.attrs['autofocus'] = True
         for field in self.fields:
             placeholder = placeholders[field]
             self.fields[field].widget.attrs['placeholder'] = placeholder

@@ -5,11 +5,11 @@ from django.contrib import messages
 from django.conf import settings
 
 from products.models import Product
-from profiles.models import UserProfile
+from profiles.models import UserProfile, Address
 from .models import OrderLineItem
 
 from .forms import OrderForm, Order
-from profiles.forms import UserAddressForm
+from profiles.forms import UserAddressForm, AddressForm
 from bag.contexts import bag_contents
 
 import stripe
@@ -52,6 +52,15 @@ def checkout(request):
             'street_address2': request.POST['street_address2'],
             'county': request.POST['county'],
         }
+
+        # address_data = {
+        #     'country': request.POST['country'],
+        #     'postcode': request.POST['postcode'],
+        #     'town_or_city': request.POST['town_or_city'],
+        #     'street_address1': request.POST['street_address1'],
+        #     'street_address2': request.POST['street_address2'],
+        #     'county': request.POST['county'],
+        # }
 
         order_form = OrderForm(form_data)
 
@@ -128,6 +137,7 @@ def checkout_success(request, order_number):
 
     if request.user.is_authenticated:
         profile = UserProfile.objects.get(user=request.user)
+
         # Attach the user's profile to the order
         order.user_profile = profile
         order.save()
@@ -142,10 +152,28 @@ def checkout_success(request, order_number):
                 'default_street_address2': order.street_address2,
                 'default_county': order.county,
             }
+
             user_address_form = UserAddressForm(profile_address_data,
                                                 instance=profile)
             if user_address_form.is_valid():
                 user_address_form.save()
+
+            address_data = {
+                'street_address1': order.street_address1,
+                'street_address2': order.street_address2,
+                'postcode': order.postcode,
+                'town_or_city': order.town_or_city,
+                'county': order.county,
+            }
+
+            address_form = AddressForm(address_data)
+            if address_form.is_valid():
+                print('isvalid')
+                address_info = address_form.save()
+                print(address_info.address_number)
+                address = get_object_or_404(Address, address_number=address_info.address_number)
+                address.userprofile = profile
+                address.save()
 
     messages.success(request, f'Order successfully processed! \
         Your order number is {order_number}. A confirmation \

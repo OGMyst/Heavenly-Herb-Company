@@ -41,7 +41,9 @@ def create_or_update_user_profile(sender, instance, created, **kwargs):
 
 
 class Address(models.Model):
-    userprofile = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
+    userprofile = models.ForeignKey(UserProfile, on_delete=models.CASCADE,
+                                    null=True, blank=True, editable=False,
+                                    related_name="addresses")
     address_number = models.CharField(max_length=32, null=False, editable=False)
     street_address1 = models.CharField(max_length=254)
     street_address2 = models.CharField(max_length=254)
@@ -55,7 +57,7 @@ class Address(models.Model):
         Generate a random, unique address number using UUID
         """
         return uuid.uuid4().hex.upper()
-    
+
     def save(self, *args, **kwargs):
         """
         Override the original save method to set the address number
