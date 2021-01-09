@@ -36,3 +36,16 @@ def create_or_update_user_profile(sender, instance, created, **kwargs):
         UserProfile.objects.create(user=instance)
     # Existing users: just save the profile
     instance.userprofile.save()
+
+
+class Address(models.Model):
+    userprofile = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
+    street_address1 = models.CharField(max_length=254)
+    street_address2 = models.CharField(max_length=254)
+    town_or_city = models.CharField(max_length=254)
+    county = models.CharField(max_length=254)
+    country = models.CharField(max_length=254)
+    postcode = models.CharField(max_length=254)
+
+    def __str__(self):
+        return self
