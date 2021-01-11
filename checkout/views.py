@@ -150,6 +150,8 @@ def checkout_success(request, order_number):
                 user_address_form.save()
 
             address_data = {
+                'full_name': order.full_name,
+                'phone_number': order.phone_number,
                 'street_address1': order.street_address1,
                 'street_address2': order.street_address2,
                 'postcode': order.postcode,
@@ -159,6 +161,8 @@ def checkout_success(request, order_number):
 
             address_lookup = Address.objects.filter(
                 userprofile=profile,
+                full_name=order.full_name,
+                phone_number=order.phone_number,
                 street_address1=order.street_address1,
                 street_address2=order.street_address2,
                 postcode=order.postcode,

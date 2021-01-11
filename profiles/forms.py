@@ -61,7 +61,9 @@ class UserAddressForm(forms.ModelForm):
 class AddressForm(forms.ModelForm):
     class Meta:
         model = Address
-        fields = ('street_address1',
+        fields = ('full_name',
+                  'phone_number',
+                  'street_address1',
                   'street_address2',
                   'town_or_city',
                   'county',
@@ -74,6 +76,8 @@ class AddressForm(forms.ModelForm):
         """
         super().__init__(*args, **kwargs)
         placeholders = {
+            'full_name': 'Full Name',
+            'phone_number': 'Phone Number',
             'street_address1': 'Street Address 1',
             'street_address2': 'Street Address 2',
             'town_or_city': 'Town or City',

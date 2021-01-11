@@ -45,14 +45,16 @@ class Address(models.Model):
                                     null=True, blank=True, editable=False,
                                     related_name="addresses")
     address_number = models.CharField(max_length=32, null=False, editable=False)
+    full_name = models.CharField(default='', max_length=50, null=False, blank=False)
     street_address1 = models.CharField(max_length=254)
     street_address2 = models.CharField(max_length=254)
     town_or_city = models.CharField(max_length=254)
     county = models.CharField(max_length=254)
     country = models.CharField(max_length=254)
     postcode = models.CharField(max_length=254)
+    phone_number = models.CharField(default='', max_length=20, null=False, blank=False)
 
-    def _generate_order_number(self):
+    def _generate_address_number(self):
         """
         Generate a random, unique address number using UUID
         """
@@ -64,7 +66,7 @@ class Address(models.Model):
         if it hasn't been set already.
         """
         if not self.address_number:
-            self.address_number = self._generate_order_number()
+            self.address_number = self._generate_address_number()
         super().save(*args, **kwargs)
 
     def __str__(self):

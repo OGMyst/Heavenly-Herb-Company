@@ -7,6 +7,8 @@ from .models import Address
 class AddressAdmin(admin.ModelAdmin):
     list_display = (
         'userprofile',
+        'full_name',
+        'phone_number',
         'address_number',
         'street_address1',
         'street_address2',
