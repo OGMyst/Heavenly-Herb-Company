@@ -29,8 +29,8 @@ def profile(request):
             messages.error(request, 'Update failed. Please ensure the form is valid.')
 
     allOrders = profile.orders.all()
-
     orders = allOrders.order_by('date').reverse()[:5]
+    addresses = profile.addresses.all().reverse()[:2]
 
     Generalform = UserGeneralForm(initial={
                     'full_name': profile.user.get_full_name(),
@@ -51,7 +51,8 @@ def profile(request):
     context = {
         'general_form': Generalform,
         'address_form': Addressform,
-        'orders': orders
+        'orders': orders,
+        'addresses': addresses
     }
 
     return render(request, template, context)

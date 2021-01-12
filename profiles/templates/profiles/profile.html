@@ -16,7 +16,7 @@
 
     <div class="container-fluid bg-off-white profile-container">
         <div class="row">
-            <div class="col-12 col-lg-3">
+            <div class="col-12 col-lg-3 page-divider">
                 <h5>General</h5>
                 <form class="mt-3" action="{% url 'profile' %}" method="POST" id="general-update-form">
                     {% csrf_token %}
@@ -25,14 +25,25 @@
                     <input type="hidden" value="general-update-form" name="update-form">
                 </form>
             </div>
-            <div class="col-12 col-lg-3">
-                <p>Your Address</p>
-                <form class="mt-3" action="{% url 'profile' %}" method="POST" id="address-update-form">
+            <div class="col-12 col-lg-3 page-divider">
+                <h5>Your Address</h5>
+                <div class="address-container">
+                    {% for address in addresses %}
+                        <div class="address-box">
+                            <p> {{ address.full_name }} </p>
+                            <p> {{ address.street_address1 }} </p>
+                            <p> {{ address.street_address2 }}, {{ address.town_or_city }}</p>
+                            <p> {{ address.postcode }} </p>
+                            <p> {{ address.phone_number }} </p>
+                        </div>
+                    {% endfor %}
+                </div>
+                <!-- <form class="mt-3" action="{% url 'profile' %}" method="POST" id="address-update-form">
                     {% csrf_token %}
                     {{ address_form|crispy }}
                     <button class="btn btn-black rounded-0 text-uppercase float-right">Update Information</button>
                     <input type="hidden" value="address-update-form" name="update-form">
-                </form>
+                </form> -->
             </div>
             <div class="col-12 col-lg-6">
                 <h5>Order History</h5>

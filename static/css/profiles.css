@@ -5,8 +5,35 @@ html {
 
 .profile-container{
     padding-top: 20px;
+    padding-bottom: 15px;
+}
+
+.page-divider{
+    border-right: 3px solid black;
 }
 
 .btn{
     padding-right: 0px;
+}
+
+.address-box{
+    border: 5px solid #143466;
+    border-radius: 5px;
+    padding-top: 5px;
+    padding-left: 15px;
+    margin-bottom: 10px;
+}
+
+.address-box > p{
+    font-weight: 400;
+    font-family: 'Times New Roman', Times, serif;
+    
+}
+p {
+    margin-bottom: 2px;
+}
+
+#address-name{
+    font-weight: 700;
+    font-family: 'Noto Sans', 'sans-serif';
 }
