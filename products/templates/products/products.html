@@ -36,7 +36,7 @@
             <div class="col-5">
                 <div class="dropdown">
                     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton-sort" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Sort By
+                            Sort By
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                         <a class="dropdown-item" href="{% url 'products' %}?sort=price_asc">Price (low to high)</a>
@@ -52,7 +52,7 @@
                         <div class="input-group w-100">
                             <input class="form-control border border-black rounded-0" type="text" name="q" placeholder="Search our products">
                             <div class="input-group-append">
-                                <button class="form-control btn btn-black border border-black rounded-0" type="submit">
+                                <button class="form-control btn border border-black rounded-0" type="submit">
                                     <span class="icon">
                                         <i class="fas fa-search"></i>
                                     </span>
@@ -69,32 +69,42 @@
     <div class="container-fluid bg-off-white d-flex products-container">
             {% for product in products%}
                     <div class="product-card d-flex">
-                        <a href="{% url 'product_detail' product.id %}">
-                            {% if product.image %}
-                            <div class="img-box">
-                                <img class="product-img" src="{{ product.image.url }}" alt="{{ product.name }}">
-                            </div>
-                            {% else %}
-                            <div class="img-box">
-                                <img class="product-img" src="{{ MEDIA_URL }}noimage.jpg" alt="{{ product.name }}">
-                            </div>
-                            {% endif %}
-                        </a>
+                        <div>
+                            <a href="{% url 'product_detail' product.id %}">
+                                {% if product.image %}
+                                <div class="img-box">
+                                    <img class="product-img" src="{{ product.image.url }}" alt="{{ product.name }}">
+                                </div>
+                                {% else %}
+                                <div class="img-box">
+                                    <img class="product-img" src="{{ MEDIA_URL }}noimage.jpg" alt="{{ product.name }}">
+                                </div>
+                                {% endif %}
+                            </a>
+                            <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
+                                {% csrf_token %}
+                                <input class="form-control qty_input" type="hidden" name="quantity" 
+                                    value="1" min="1" max="99" data-item_id="{{ product.id }}" id="id_qty_{{ product.id }}">
+                                <div class="add-item-btn">
+                                    <input type="submit" class="btn add-item-input add-item-text" value="Add to Bag">
+                                </div>
+                                <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                            </form>
+                        </div>
                         <div class="card-right-box">
                             <div class="text-box">
                                 <h6>{{ product.name }}</h6>
                                 <p>£{{ product.price }}</p>
+                                <p class="product-desc">
+                                    {{ product.description|truncatechars:180 }}
+                                    <a href="{% url 'product_detail' product.id %}">View More</a>
+                                </p>
                             </div>
-                            <a href="#">
-                                <div class="add-item-btn">
-                                    <h5 class="add-item-text">Add to Basket</h5>
-                                </div>
-                            </a>
                             {% if request.user.is_superuser %}
-                            <div class="edit-delete-product">
-                                <a href="{% url 'edit_product' product.id %}">Edit</a> | 
-                                <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
-                            </div>
+                                <div class="edit-delete-product">
+                                    <a href="{% url 'edit_product' product.id %}">Edit</a> | 
+                                    <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
+                                </div>
                             {% endif %}
                         </div>
                     </div>

@@ -47,13 +47,13 @@ h5{
 
 .text-box{
     width: 100%;
-    height: 65%
 }
 
 
 .add-item-btn{
-    width: 60%;
-    padding: 5px 2px;
+    width: 100%;
+    margin-top: 5px;
+    padding: 5px 0;
     border-radius: 10px;
     text-align: center;
     background-color: #18451C;
@@ -64,6 +64,10 @@ h5{
     font-size: 15px;
 }
 
+.add-item-input{
+    padding: 0 0;
+}
+
 .edit-delete-product{
     padding: 5px;
 }
@@ -72,6 +76,12 @@ h5{
     display: flex;
     flex-wrap: wrap;
 }
+
+.product-desc{
+    font-size: 13px;
+    font-weight: 300;
+}
+
 /* -----------------------------------PRODUCT_DETAIL---------------------------- */
 .pd-sub-nav{
     margin-top: 83px;
