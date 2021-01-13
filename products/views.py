@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from django.db.models import Q
 
 from .models import Product, Category
 from .forms import ProductForm
@@ -21,7 +22,6 @@ def products(request):
             split_category = request.GET['category'].split(',')
             products = products.filter(category__name__in=split_category)
             current_category = Category.objects.get(name=request.GET['category'])
-            print(current_category)
 
         if 'sort' in request.GET:
             sort = request.GET['sort']
@@ -31,6 +31,15 @@ def products(request):
             if sort_list[1] == 'desc':
                 sortkey = f'-{sortkey}'
             products = products.order_by(sortkey)
+
+        if 'q' in request.GET:
+            query = request.GET['q']
+            if not query:
+                messages.error(request, "You didn't enter any search criteria!")
+                return redirect(reverse('products'))
+
+            queries = Q(name__icontains=query) | Q(description__icontains=query)
+            products = products.filter(queries)
 
     current_sorting = f'{sort}_{direction}'
 
