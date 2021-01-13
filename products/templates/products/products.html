@@ -18,15 +18,19 @@
             <div class="col-2">
                 <div class="dropdown">
                     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton-categories" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        {% if current_category %}
+                            {{ current_category.friendly_name }}
+                        {% else %}
                             Categories
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            {% for category in categories %}
-                                <a class="dropdown-item" href="{% url 'products' %}?category={{ category.name }}">
-                                    {{ category.friendly_name }}
-                                </a>
-                            {% endfor %}
-                        </div>
+                        {% endif %} 
                     </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        {% for category in categories %}
+                            <a class="dropdown-item" href="{% url 'products' %}?category={{ category.name }}">
+                                {{ category.friendly_name }}
+                            </a>
+                        {% endfor %}
+                    </div>  
                 </div>
             </div>
             <div class="col-2">

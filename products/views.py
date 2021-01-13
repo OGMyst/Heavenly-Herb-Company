@@ -20,7 +20,8 @@ def products(request):
         if 'category' in request.GET:
             split_category = request.GET['category'].split(',')
             products = products.filter(category__name__in=split_category)
-            current_category = Category.objects.filter(name__in=split_category)
+            current_category = Category.objects.get(name=request.GET['category'])
+            print(current_category)
 
         if 'sort' in request.GET:
             sort = request.GET['sort']
