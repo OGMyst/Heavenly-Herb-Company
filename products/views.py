@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
+from django.core.paginator import Paginator
 
 from .models import Product, Category
 from .forms import ProductForm
@@ -10,17 +11,27 @@ from .forms import ProductForm
 
 def products(request):
     """ A view to return and filter products for the products page """
-
-    products = Product.objects.all()
+    all_products = Product.objects.all()
     categories = Category.objects.all()
     current_category = None
     sort = None
     direction = None
+    page_number = 1
+    start_point = 0
+    end_point = start_point + 9
 
     if request.GET:
+        if 'page' in request.GET:
+            page_number = request.GET.get('page')
+            start_point = (int(page_number) - 1)*9
+            end_point = start_point + 9
+            filtered_products = all_products
+            split_filtered_products = all_products[start_point:end_point]
+
         if 'category' in request.GET:
             split_category = request.GET['category'].split(',')
-            products = products.filter(category__name__in=split_category)
+            filtered_products = all_products.filter(category__name__in=split_category)
+            split_filtered_products = all_products.filter(category__name__in=split_category)[start_point:end_point]
             current_category = Category.objects.get(name=request.GET['category'])
 
         if 'sort' in request.GET:
@@ -30,7 +41,9 @@ def products(request):
 
             if sort_list[1] == 'desc':
                 sortkey = f'-{sortkey}'
-            products = products.order_by(sortkey)
+
+            filtered_products = all_products.order_by(sortkey)
+            split_filtered_products = all_products.order_by(sortkey)[start_point:end_point]
 
         if 'q' in request.GET:
             query = request.GET['q']
@@ -39,15 +52,23 @@ def products(request):
                 return redirect(reverse('products'))
 
             queries = Q(name__icontains=query) | Q(description__icontains=query)
-            products = products.filter(queries)
+            filtered_products = all_products.filter(queries)
+            split_filtered_products = all_products.filter(queries)[start_point:end_point]
 
+    else:
+        filtered_products = all_products
+        split_filtered_products = all_products[start_point:end_point]
+
+    paginator = Paginator(filtered_products, 9)
+    page_obj = paginator.get_page(page_number)
     current_sorting = f'{sort}_{direction}'
 
     context = {
-        'products': products,
+        'products': split_filtered_products,
         'categories': categories,
         'current_category': current_category,
         'current_sorting': current_sorting,
+        'page_obj': page_obj
         }
 
     return render(request, 'products/products.html', context)

@@ -82,6 +82,15 @@ h5{
     font-weight: 300;
 }
 
+.previous-link{
+    width: 45%;
+    align-content: flex-end
+}
+
+.next-link{
+    width: 45%;
+}
+
 /* -----------------------------------PRODUCT_DETAIL---------------------------- */
 .pd-sub-nav{
     margin-top: 83px;

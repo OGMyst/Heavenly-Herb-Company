@@ -15,7 +15,20 @@
 
     <div class="container-fluid bg-blue sub-nav">
         <div class="row">
-            <div class="col-3">
+            <div class="col-1">
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton-sort" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Sort By
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="{% url 'products' %}?sort=price_asc">Price (low to high)</a>
+                        <a class="dropdown-item" href="{% url 'products' %}?sort=price_desc">Price (high to low)</a>
+                        <a class="dropdown-item" href="{% url 'products' %}?sort=name_asc">Name (A-Z)</a>
+                        <a class="dropdown-item" href="{% url 'products' %}?sort=name_desc">Name (Z-A)</a>                    
+                    </div>
+                </div>
+            </div>
+            <div class="col-7">
                 <div class="dropdown">
                     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton-categories" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         {% if current_category %}
@@ -33,19 +46,7 @@
                     </div>  
                 </div>
             </div>
-            <div class="col-5">
-                <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton-sort" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Sort By
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="{% url 'products' %}?sort=price_asc">Price (low to high)</a>
-                        <a class="dropdown-item" href="{% url 'products' %}?sort=price_desc">Price (high to low)</a>
-                        <a class="dropdown-item" href="{% url 'products' %}?sort=name_asc">Name (A-Z)</a>
-                        <a class="dropdown-item" href="{% url 'products' %}?sort=name_desc">Name (Z-A)</a>                    
-                    </div>
-                </div>
-            </div>
+            
             
             <div class="col-4 my-auto py-1 py-lg-0">
                 <form method="GET" action="{% url 'products' %}">
@@ -109,5 +110,24 @@
                         </div>
                     </div>
             {% endfor%}
+        <div class="col-12 pagination">
+            <span class="step-links w-100 d-flex">
+                <div class="previous-link ">
+                    {% if page_obj.has_previous %}
+                        <a href="?page=1">&laquo; first</a>
+                        <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+                    {% endif %}
+                </div>
+                <span class="current">
+                    Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+                </span>
+                <div class="next-link">
+                {% if page_obj.has_next %}
+                    <a href="?page={{ page_obj.next_page_number }}">next</a>
+                    <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+                {% endif %}
+                </div>
+            </span>
+        </div>
     </div>
 {% endblock %}
