@@ -156,6 +156,9 @@
     <script type="text/javascript">
         $('.toast').toast('show');
     </script>
+    {{ block.super }}
+        <script type="text/javascript" src="{% static 'js/scroll_transition.js' %}" ></script>
+
     {% endblock %}
 
     

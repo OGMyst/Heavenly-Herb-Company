@@ -53,11 +53,15 @@ h1, h5, h6, .btn{
 }
 header{
     border-bottom: solid 3px #000000;
-    transition: background-color .4s cubic-bezier(.46,.03,.52,.96);
+    transition: background-color .2s cubic-bezier(.46,.03,.52,.96);
 }
 
 header:hover{
     background-color: #7196CE;
+}
+
+html:not([data-scroll='0']) header {
+  background-color: #7196CE;
 }
 
 #topnav{
