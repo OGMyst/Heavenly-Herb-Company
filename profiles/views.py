@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 
@@ -73,3 +73,22 @@ def order_history(request, order_number):
     }
 
     return render(request, template, context)
+
+
+@login_required
+def edit_address(request, address_id):
+    """ Edit an address in the store """
+
+    return render(request)
+
+
+@login_required
+def delete_address(request, address_id):
+    """ Delete an address from the store """
+
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, you must be logged in to do that.')
+        return redirect(reverse('home'))
+
+    messages.success(request, 'Address deleted!')
+    return redirect(reverse('profile'))

@@ -1,3 +1,5 @@
+// credit to https://css-tricks.com/styling-based-on-scroll-position/
+
 // The debounce function receives our function as a parameter
 const debounce = (fn) => {
 

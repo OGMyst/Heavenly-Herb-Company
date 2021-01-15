@@ -53,7 +53,7 @@ h1, h5, h6, .btn{
 }
 header{
     border-bottom: solid 3px #000000;
-    transition: background-color .2s cubic-bezier(.46,.03,.52,.96);
+    transition: background-color .15s cubic-bezier(.46,.03,.52,.96);
 }
 
 header:hover{

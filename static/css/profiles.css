@@ -17,23 +17,14 @@ html {
 }
 
 .address-box{
-    border: 5px solid #0c1c35;
-    border-radius: 5px;
+    border: solid 3px #0c1c35;
+    border-radius: 10px;
+    box-shadow: 0 2px 1px 1px rgba(53, 51, 51, 0.53);
     padding-top: 5px;
     padding-left: 15px;
     margin-bottom: 10px;
 }
 
-.address-box > p{
-    font-weight: 400;
-    font-family: 'Times New Roman', Times, serif;
-    
-}
 p {
     margin-bottom: 2px;
-}
-
-#address-name{
-    font-weight: 700;
-    font-family: 'Noto Sans', 'sans-serif';
 }

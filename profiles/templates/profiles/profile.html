@@ -31,10 +31,16 @@
                     {% for address in addresses %}
                         <div class="address-box">
                             <p> {{ address.full_name }} </p>
-                            <p> {{ address.street_address1 }} </p>
-                            <p> {{ address.street_address2 }}, {{ address.town_or_city }}</p>
-                            <p> {{ address.postcode }} </p>
-                            <p> {{ address.phone_number }} </p>
+                            <p class="font-weight-light"> {{ address.street_address1 }} </p>
+                            <p class="font-weight-light"> {{ address.street_address2 }}, {{ address.town_or_city }}</p>
+                            <p class="font-weight-light"> {{ address.postcode }} </p>
+                            <div class="d-flex">
+                                <p class="font-weight-light"> {{ address.phone_number }} </p>
+                                <div class="edit-delete-address">
+                                    <a href="{% url 'edit_address' address.id %}">Edit</a> | 
+                                    <a class="text-danger" href="{% url 'delete_address' address.id %}">Delete</a>
+                                </div>
+                            </div>
                         </div>
                     {% endfor %}
                 </div>
