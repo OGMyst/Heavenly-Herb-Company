@@ -9,7 +9,7 @@ from profiles.models import UserProfile, Address
 from .models import OrderLineItem
 
 from .forms import OrderForm, Order
-from profiles.forms import UserAddressForm, AddressForm
+from profiles.forms import AddressForm
 from bag.contexts import bag_contents
 
 import stripe
@@ -135,19 +135,6 @@ def checkout_success(request, order_number):
 
         # Save the user's info
         if save_info:
-            profile_address_data = {
-                'default_country': order.country,
-                'default_postcode': order.postcode,
-                'default_town_or_city': order.town_or_city,
-                'default_street_address1': order.street_address1,
-                'default_street_address2': order.street_address2,
-                'default_county': order.county,
-            }
-
-            user_address_form = UserAddressForm(profile_address_data,
-                                                instance=profile)
-            if user_address_form.is_valid():
-                user_address_form.save()
 
             address_data = {
                 'full_name': order.full_name,
