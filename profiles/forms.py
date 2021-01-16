@@ -62,12 +62,14 @@ class AddressForm(forms.ModelForm):
     class Meta:
         model = Address
         fields = ('full_name',
-                  'phone_number',
                   'street_address1',
                   'street_address2',
                   'town_or_city',
                   'county',
-                  'postcode')
+                  'country',
+                  'postcode',
+                  'phone_number',
+                  )
 
     def __init__(self, *args, **kwargs):
         """
@@ -77,12 +79,13 @@ class AddressForm(forms.ModelForm):
         super().__init__(*args, **kwargs)
         placeholders = {
             'full_name': 'Full Name',
-            'phone_number': 'Phone Number',
             'street_address1': 'Street Address 1',
             'street_address2': 'Street Address 2',
             'town_or_city': 'Town or City',
             'county': 'County, State or Locality',
+            'country': 'Country',
             'postcode': 'Postal Code',
+            'phone_number': 'Phone Number',
         }
 
         self.fields['street_address1'].widget.attrs['autofocus'] = True

@@ -157,6 +157,7 @@ def checkout_success(request, order_number):
                 'postcode': order.postcode,
                 'town_or_city': order.town_or_city,
                 'county': order.county,
+                'country': order.country,
             }
 
             address_lookup = Address.objects.filter(
@@ -168,6 +169,7 @@ def checkout_success(request, order_number):
                 postcode=order.postcode,
                 town_or_city=order.town_or_city,
                 county=order.county,
+                country=order.country,
             )
 
             if not address_lookup:
