@@ -119,12 +119,21 @@ footer{
     position: relative;
 }
 
-.profile-form-input{
+.product-form-input{
     margin-bottom: 10px;
     border-style: solid;
     border-color: #a29e9e;
     border-radius: 5px;
     width: 100%;
+    padding: 4px 7px;
+    font-size: 15px;
+}
+
+.profile-form-input{
+    margin-bottom: 10px;
+    border-style: solid;
+    border-color: #a29e9e;
+    border-radius: 5px;
     padding: 4px 7px;
     font-size: 15px;
 }

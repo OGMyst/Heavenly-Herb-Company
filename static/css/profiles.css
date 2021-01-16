@@ -28,3 +28,22 @@ html {
 p {
     margin-bottom: 2px;
 }
+
+#address-update-form{
+    padding-left: 25px;
+}
+
+.control-group{
+    margin-right: 30px;
+}
+
+.address-fields{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.update-btn{
+    display: block;
+    margin: 20px 500px 10px 0;
+    padding-left: 0;
+}

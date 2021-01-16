@@ -49,7 +49,7 @@ def edit_address(request, address_number):
     address = get_object_or_404(Address, address_number=address_number)
 
     if request.method == 'POST':
-        form = AddressForm(request.POST, instance=profile)
+        form = AddressForm(request.POST, instance=address)
         if form.is_valid():
             form.save()
             messages.success(request, 'Address updated successfully')

@@ -57,9 +57,8 @@ class AddressForm(forms.ModelForm):
             'phone_number': 'Phone Number',
         }
 
-        self.fields['street_address1'].widget.attrs['autofocus'] = True
+        # self.fields['street_address_1'].widget.attrs['autofocus'] = True
         for field in self.fields:
             placeholder = placeholders[field]
             self.fields[field].widget.attrs['placeholder'] = placeholder
             self.fields[field].widget.attrs['class'] = 'profile-form-input'
-            self.fields[field].label = False
