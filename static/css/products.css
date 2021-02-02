@@ -115,3 +115,24 @@ h5{
 .pd-desc{
     font-weight: 400;
 }
+
+/*-----------------------------------------PHONE PORTRAIT MEDIA QUERY-----------------------------------------*/
+@media only screen and (max-width: 450px){
+    .product-card{
+    width: 100%;
+    margin-bottom: 15px;
+    margin-right: 1.33%;
+   flex-wrap: wrap;  
+}
+
+.product-img{
+    width: 40%;
+    margin: 5px 5%;
+}  
+
+.pd-image{
+    width: 100%;
+    margin-bottom: 5px;
+} 
+
+}
