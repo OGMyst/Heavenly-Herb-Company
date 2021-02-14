@@ -3,8 +3,10 @@ import uuid
 from django.db import models
 from django.db.models import Sum
 from django.conf import settings
+from decimal import Decimal
 
 from django_countries.fields import CountryField
+from world_regions.models import Region
 
 from products.models import Product
 from profiles.models import UserProfile
@@ -43,9 +45,24 @@ class Order(models.Model):
         Update grand total each time a line item is added,
         accounting for delivery costs.
         """
+        region = Region.objects.get(countries__country=self.country)
+        eu_regions = ['Northern Europe', 'Western Europe', 'Eastern Europe', 'Southern Europe']
+
+        if self.country == 'GB':
+            free_delivery_threshold = settings.FREE_DELIVERY_THRESHOLD_UK
+            standard_delivery_cost = settings.STANDARD_DELIVERY_COST_UK
+
+        elif region.name in eu_regions:
+            free_delivery_threshold = settings.FREE_DELIVERY_THRESHOLD_EU
+            standard_delivery_cost = Decimal.from_float(settings.STANDARD_DELIVERY_COST_EU)
+
+        else:
+            free_delivery_threshold = settings.FREE_DELIVERY_THRESHOLD_WORLD
+            standard_delivery_cost = settings.STANDARD_DELIVERY_COST_WORLD
+
         self.order_total = self.lineitems.aggregate(Sum('lineitem_total'))['lineitem_total__sum'] or 0
-        if self.order_total < settings.FREE_DELIVERY_THRESHOLD_UK:
-            self.delivery_cost = settings.STANDARD_DELIVERY_COST_UK
+        if self.order_total < free_delivery_threshold:
+            self.delivery_cost = standard_delivery_cost
         else:
             self.delivery_cost = 0
         self.grand_total = self.order_total + self.delivery_cost
