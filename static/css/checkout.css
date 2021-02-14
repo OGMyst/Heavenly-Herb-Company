@@ -7,6 +7,12 @@
     width: 50%;
 }
 
+.checkout-container{
+    flex-wrap:wrap;
+    padding-top: 20px;
+    justify-content: center;
+    min-height: calc(100vh - 206px);
+}
 /* ----------------------------STRIPE------------------------ */
 
 .StripeElement{

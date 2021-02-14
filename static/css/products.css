@@ -18,10 +18,12 @@ h5{
     margin-top: 20px;
     padding: 10px 15px;
 }
+
 .products-container{
     flex-wrap:wrap;
     padding-top: 20px;
     justify-content: center;
+    min-height: calc(100vh - 278px);
 }
 
 .product-card{
@@ -100,6 +102,7 @@ h5{
 .pd-container{
     padding: 15px 40px;
     flex-wrap: wrap;
+    min-height: calc(100vh - 191px);
 }
 
 .pd-image{

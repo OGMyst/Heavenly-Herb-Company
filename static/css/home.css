@@ -9,6 +9,7 @@ html {
     display: flex;
     margin-top: 140px;
     margin-bottom: 40px;
+    min-height: calc(100vh - 230px);
 }
 
 #left-arrow{
