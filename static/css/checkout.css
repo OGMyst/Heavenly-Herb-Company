@@ -13,6 +13,22 @@
     justify-content: center;
     min-height: calc(100vh - 206px);
 }
+
+.change-text-color{
+    animation-name: changer;
+    animation-duration: 1.575s;
+}
+
+@keyframes changer {
+    0% {color: black;}
+    50% {
+        color: rgb(83, 165, 97);
+        transform: matrix(1, 0, 0, 1, 0, -1.5);
+        text-shadow: 2px 3px #d4d4c6;
+    }
+    75%{transform: matrix(1, 0, 0, 1, 0, 0)}
+    100% {color: rgb(0, 0, 0);}
+}
 /* ----------------------------STRIPE------------------------ */
 
 .StripeElement{
