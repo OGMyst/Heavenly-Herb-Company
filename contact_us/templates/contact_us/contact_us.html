@@ -1,9 +1,20 @@
 {% extends "base.html" %}
 {% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/contact_us.css' %}">
+{% endblock %}
+
 {% block page_header %}
     <div class="container-fluid margin-for-nav">
         <h1>Contact Us</h1>
     </div>
 {% endblock %}
 {% block content %}
+    <form action="{% url 'checkout' %}" method="POST" id="payment-form">
+        {% csrf_token %}
+        <fieldset class="rounded mb-2">
+            {{ contact_form | crispy }}
+        </fieldset>
+    </form>
 {% endblock %}
