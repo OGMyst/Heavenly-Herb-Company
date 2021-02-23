@@ -1,0 +1,1 @@
+web: gunicorn heavenly_herb_company.wsgi:application
