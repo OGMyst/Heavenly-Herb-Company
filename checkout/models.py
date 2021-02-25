@@ -97,11 +97,3 @@ class OrderLineItem(models.Model):
 
     def __str__(self):
         return f'SKU {self.product.sku} on order {self.order.order_number}'
-
-
-class RegionCountry(models.Model):
-
-    def save(self, *args, **kwargs):
-        region = models.ForeignKey(Region, related_name="countries", on_delete=models.CASCADE)
-        self.region = region
-        super(RegionCountry, self).save(*args, **kwargs)
