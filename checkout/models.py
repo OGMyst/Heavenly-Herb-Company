@@ -45,7 +45,7 @@ class Order(models.Model):
         Update grand total each time a line item is added,
         accounting for delivery costs.
         """
-        region = Region.objects.get(countries__country=self.country)
+        region = Region.objects.get(countries__country=self.country, on_delete=models.CASCADE)
         eu_regions = ['Northern Europe', 'Western Europe', 'Eastern Europe', 'Southern Europe']
 
         if self.country == 'GB':
