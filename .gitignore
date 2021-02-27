@@ -7,3 +7,4 @@ __pycache__/
 *.pyc
 *.sqlite3
 __pychache__
+development_data.json
