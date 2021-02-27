@@ -6,7 +6,6 @@ from django.conf import settings
 from decimal import Decimal
 
 from django_countries.fields import CountryField
-from world_regions.models import Region
 
 from products.models import Product
 from profiles.models import UserProfile
@@ -21,7 +20,7 @@ class Order(models.Model):
     full_name = models.CharField(max_length=50, null=False, blank=False)
     email = models.EmailField(max_length=254, null=False, blank=False)
     phone_number = models.CharField(max_length=20, null=False, blank=False)
-    country = CountryField(blank_label="Country *",default = 'UK', null=False, blank=False)
+    country = CountryField(blank_label="Country *",default = 'GB', null=False, blank=False)
     postcode = models.CharField(max_length=20, null=True, blank=True)
     town_or_city = models.CharField(max_length=40, null=False, blank=False)
     street_address1 = models.CharField(max_length=80, null=False, blank=False)
@@ -45,14 +44,21 @@ class Order(models.Model):
         Update grand total each time a line item is added,
         accounting for delivery costs.
         """
-        region = Region.objects.get(countries__country=self.country, on_delete=models.CASCADE)
-        eu_regions = ['Northern Europe', 'Western Europe', 'Eastern Europe', 'Southern Europe']
+        eu_country_codes = [
+                      'AL', 'AD', 'AM', 'AT', 'AZ', 'BY', 'BE',
+                      'BA', 'BG', 'HR', 'CY', 'CZ', 'DK', 'EE',
+                      'FI', 'FR', 'GE', 'DE', 'GR', 'HU', 'IS',
+                      'IE', 'IT', 'KZ', 'LV', 'LI', 'LT', 'LU',
+                      'MK', 'MT', 'MD', 'MC', 'ME', 'NL', 'NO',
+                      'PL', 'PT', 'RO', 'RU', 'SM', 'RS', 'SK',
+                      'SI', 'ES', 'SE', 'CH', 'TR', 'UA', 'VA',
+                    ]
 
         if self.country == 'GB':
             free_delivery_threshold = settings.FREE_DELIVERY_THRESHOLD_UK
             standard_delivery_cost = settings.STANDARD_DELIVERY_COST_UK
 
-        elif region.name in eu_regions:
+        elif self.country in eu_country_codes:
             free_delivery_threshold = settings.FREE_DELIVERY_THRESHOLD_EU
             standard_delivery_cost = Decimal.from_float(settings.STANDARD_DELIVERY_COST_EU)
 

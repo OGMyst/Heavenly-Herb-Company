@@ -8,7 +8,6 @@ django-allauth==0.43.0
 django-countries==6.1.3
 django-crispy-forms==1.10.0
 django-storages==1.11.1
-django-world-regions==0.1.1
 gunicorn==20.0.4
 isort==5.7.0
 jmespath==0.10.0
