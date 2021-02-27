@@ -129,9 +129,20 @@ WSGI_APPLICATION = 'heavenly_herb_company.wsgi.application'
 #     }
 # }
 
-DATABASES = {
-    'default': dj_database_url.parse('postgres://igsvvmsgosuibm:a13dc3edc89825ed2ff1451dd6c56286587d8682863614b9c3d41311800d7541@ec2-54-72-155-238.eu-')
-}
+
+if 'DATABASE_URL' in os.environ:
+    print("Connected to Postgres")
+    DATABASES = {
+        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+    }
+else:
+    print("Connected to SQLite3")
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
+    }
 
 
 # Password validation
