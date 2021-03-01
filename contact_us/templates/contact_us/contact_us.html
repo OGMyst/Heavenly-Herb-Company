@@ -11,10 +11,14 @@
     </div>
 {% endblock %}
 {% block content %}
-    <form action="{% url 'checkout' %}" method="POST" id="payment-form">
-        {% csrf_token %}
-        <fieldset class="rounded mb-2">
-            {{ contact_form | crispy }}
-        </fieldset>
-    </form>
+<div class="contact-us-container bg-off-white blue-border">
+    <div class="d-flex justify-content-center">
+        <form action="#" method="POST" id="contact-form">
+            {% csrf_token %}
+            <fieldset class="rounded mb-2">
+                {{ contact_form | crispy }}
+            </fieldset>
+        </form>
+    </div>
+</div>
 {% endblock %}

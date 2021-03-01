@@ -1,0 +1,21 @@
+html {
+    background: url('/media/alt-background.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+.contact-us-container{
+    flex-wrap:wrap;
+    padding-top: 20px;
+    justify-content: center;
+    min-height: calc(100vh - 206px);
+}
+
+.stripe-style-input{
+    margin-bottom: 10px;
+    border-style: solid;
+    border-color: #a29e9e;
+    border-radius: 5px;
+    width: 100%;
+    padding: 4px 7px;
+    font-size: 15px;
+}
