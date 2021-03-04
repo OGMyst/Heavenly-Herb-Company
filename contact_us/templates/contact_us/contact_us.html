@@ -12,14 +12,14 @@
 {% endblock %}
 {% block content %}
     <div class="contact-us-container bg-off-white blue-border">
-        <h3 class="text-center">Have any questions? Let us know</h3>
+        <h3 class="text-center">Have any questions or new ideas? Let us know</h3>
         <div class="d-flex justify-content-center">
             <form method="POST" id="contact-form">
                 {% csrf_token %}
                 <fieldset class="rounded mb-2">
                     {{ contact_form | crispy }}
                 </fieldset>
-                <input type="submit" class="btn green-button gold-text" value="Send">
+                <input id="contact-submit" type="submit" class="btn green-button gold-text" value="Send">
             </form>
         </div>
     </div>
