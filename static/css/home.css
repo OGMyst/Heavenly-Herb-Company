@@ -33,3 +33,20 @@ html {
     margin-top: 3px;
     margin-left: 3px;
 }
+
+@media only screen and (max-width: 450px){
+
+#logo{
+    height: 200px;
+}
+
+#main-logo-background{
+    width: 206px;
+    height: 206px;
+    border-radius: 205px;
+}
+
+.navbar{
+    padding: .5rem 1.5rem;
+}
+}
