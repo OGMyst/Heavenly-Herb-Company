@@ -86,6 +86,12 @@ html:not([data-scroll='0']) header {
     margin-top: 1px;
 }
 
+.bag-value{
+    position: absolute;
+    font-size: 12px;
+    right: 34px
+}
+
 .text-white{
     color: #ffffff;
     text-shadow: 1px 1px #000000;
@@ -152,4 +158,23 @@ footer{
     position: absolute;
     top: -10px;
     right: 33px;
+}
+
+@media only screen and (max-width: 450px){
+
+.list-inline-item{
+    margin-right: 0;
+}
+
+#nav-logo{
+    margin-left: 0;
+}
+
+.bag-value{
+    right: 34px
+}
+
+.list-inline-item:not(:last-child){
+    margin-right: 0;
+}
 }

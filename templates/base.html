@@ -40,7 +40,7 @@
     <div class="dark-overlay"></div>
         <header class=" fixed-top">
             <div id="topnav" class="row pt-lg-2 d-none d-lg-flex">
-                <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
+                <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center pl-4 text-lg-left">
                     <div id="nav-logo-background">
                         <a href="{% url 'home' %}" class="main-logo-link">
                             <img src="https://heavenly-herb-company.s3.amazonaws.com/media/logo.png" id="nav-logo">
@@ -100,13 +100,15 @@
                             <a class="text-white nav-link" href="{% url 'view_bag' %}">
                                 <div class="text-center">
                                     <div><i class="fas fa-shopping-bag fa-lg"></i></div>
-                                    <!-- <p class="my-0">
-                                        {% if grand_total %}
-                                            ${{ grand_total|floatformat:2 }}
-                                        {% else %}
-                                            $0.00
-                                        {% endif %}
-                                    </p> -->
+                                    <div class="bag-value">
+                                        <p class="my-0">
+                                            {% if grand_total != 4 %}
+                                                £{{ grand_total|floatformat:2 }}
+                                            {% else %}
+                                                $0.00
+                                            {% endif %}
+                                        </p>
+                                    </div>
                                 </div>
                             </a>
                         </li>
