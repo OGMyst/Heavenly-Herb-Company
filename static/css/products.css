@@ -118,10 +118,6 @@ h5{
 .pd-desc{
     font-weight: 400;
 }
-
-/*-----------------------------------------PHONE PORTRAIT MEDIA QUERY-----------------------------------------*/
-@media only screen and (max-width: 450px){
-    .product-card{
     width: 100%;
     margin-bottom: 15px;
     margin-right: 1.33%;
@@ -138,4 +134,7 @@ h5{
     margin-bottom: 5px;
 } 
 
+.mobile-hidden{
+    display: none;
 }
+

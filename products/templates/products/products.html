@@ -12,9 +12,8 @@
 {% block content %}
 
 <!----------------------------- SUB-NAVBAR -------------------------->
-
     <div class="container-fluid bg-blue sub-nav">
-        <div class="row">
+        <div class="row mobile-hidden">
             <div class="col-1">
                 <div class="dropdown">
                     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton-sort" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -28,7 +27,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-7">
+            <div class="col-7 ">
                 <div class="dropdown">
                     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton-categories" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         {% if current_category %}
@@ -46,25 +45,33 @@
                     </div>  
                 </div>
             </div>
-            
-            
+            <!--------------------------------------------------------------- SEARCHBAR ---------------------------------------------------------->
             <div class="col-4 my-auto py-1 py-lg-0">
                 <form method="GET" action="{% url 'products' %}">
-                        <div class="input-group w-100">
-                            <input class="form-control border rounded-0" type="text" name="q" placeholder="Search our products">
-                            <div class="input-group-append">
-                                <button class="form-control btn border rounded-0" type="submit">
-                                    <span class="icon">
-                                        <i class="fas fa-search"></i>
-                                    </span>
-                                </button>
-                            </div>
+                    <div class="input-group w-100">
+                        <input class="form-control border rounded-0" type="text" name="q" placeholder="Search our products">
+                        <div class="input-group-append">
+                            <button class="form-control btn border rounded-0" type="submit">
+                                <span class="icon">
+                                    <i class="fas fa-search"></i>
+                                </span>
+                            </button>
                         </div>
-                    </form>
+                    </div>
+                </form>
             </div>
         </div>
+        <!--------------------------------------------------------------- MOBILE VIEW FILTERS ---------------------------------------------------------->
+        <div class="row bg-blue mobile-navbar d-lg-none">   
+            <nav class="navbar navbar-expand-lg navbar-light w-100">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mobile-filter-nav" aria-controls="mobile-filter-nav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                </button>
+                {% include 'includes/sub-nav-mobile.html' %}
+                {% include 'includes/mobile-filter-menu.html' %}
+            </nav>
+        </div>
     </div>
-
 <!----------------------------- PRODUCTS -------------------------->
 
     <div class="container-fluid bg-off-white d-flex products-container">
@@ -130,4 +137,9 @@
             </span>
         </div>
     </div>
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+    <script type="text/javascript" src="{% static 'js/mobile-show-searchbar.js' %}" ></script>
 {% endblock %}
