@@ -93,6 +93,40 @@ h5{
     width: 45%;
 }
 
+.subnav-mobile {
+    padding: 5px 5px;
+}
+
+#plp-search{
+    height:35px;
+    font-size: 15px;
+}
+
+#plp-search-button{
+    height:35px;
+    padding: 0 15px 5px;
+}
+
+.fa-search{
+    font-size: 13px;
+}
+
+.navbar-toggler{
+    border: none;
+}
+
+.dropdown-header{
+    padding: .5rem 0px;
+}
+
+.dropdown-item{
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.dropdown-item > .active{
+    color: #FFDA16;
+}
 /* -----------------------------------PRODUCT_DETAIL---------------------------- */
 .pd-sub-nav{
     margin-top: 83px;
@@ -118,6 +152,10 @@ h5{
 .pd-desc{
     font-weight: 400;
 }
+
+/*-----------------------------------------PHONE PORTRAIT MEDIA QUERY-----------------------------------------*/
+@media only screen and (max-width: 450px){
+    .product-card{
     width: 100%;
     margin-bottom: 15px;
     margin-right: 1.33%;
@@ -137,4 +175,4 @@ h5{
 .mobile-hidden{
     display: none;
 }
-
+}

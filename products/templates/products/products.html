@@ -12,8 +12,8 @@
 {% block content %}
 
 <!----------------------------- SUB-NAVBAR -------------------------->
-    <div class="container-fluid bg-blue sub-nav">
-        <div class="row mobile-hidden">
+    <div class="container-fluid bg-blue">
+        <div class="row sub-nav mobile-hidden">
             <div class="col-1">
                 <div class="dropdown">
                     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton-sort" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -63,9 +63,9 @@
         </div>
         <!--------------------------------------------------------------- MOBILE VIEW FILTERS ---------------------------------------------------------->
         <div class="row bg-blue mobile-navbar d-lg-none">   
-            <nav class="navbar navbar-expand-lg navbar-light w-100">
+            <nav class="subnav-mobile navbar navbar-expand-lg navbar-light w-100">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mobile-filter-nav" aria-controls="mobile-filter-nav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
+                        <i class="fas fa-sort text-white"></i>
                 </button>
                 {% include 'includes/sub-nav-mobile.html' %}
                 {% include 'includes/mobile-filter-menu.html' %}
@@ -137,9 +137,4 @@
             </span>
         </div>
     </div>
-{% endblock %}
-
-{% block postloadjs %}
-{{ block.super }}
-    <script type="text/javascript" src="{% static 'js/mobile-show-searchbar.js' %}" ></script>
 {% endblock %}

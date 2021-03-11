@@ -1,35 +1,23 @@
 <div class="collapse navbar-collapse" id="mobile-filter-nav">
-                    <ul class="navbar-nav w-auto px-3 text-white">
-                        <li class="nav-item dropdown-header">
-                            <h6 class=""> Sort By </h6> 
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link" href="{% url 'products' %}?sort=price_asc">Price (low to high)</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link" href="{% url 'products' %}?sort=price_desc">Price (high to low)</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link" href="{% url 'products' %}?sort=name_asc">Name (A-Z)</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link" href="{% url 'products' %}?sort=name_desc">Name (Z-A)</a>
-                        </li>
-                        <li class="nav-item dropdown-header">
-                            <h6 class=""> 
-                                {% if current_category %}
-                                    { current_category.friendly_name }}
-                                {% else %}
-                                    Categories
-                                {% endif %}  
-                            </h6> 
-                        </li>
-                        <li class="nav-item dropdown-header">
-                            {% for category in categories %}
-                                <a class="dropdown-item" href="{% url 'products' %}?category={{ category.name }}">
-                                    {{ category.friendly_name }}
-                                </a>
-                            {% endfor %}
-                        </li>
-                    </ul>
-                </div>
+    <ul class="navbar-nav w-auto">
+        <li class="nav-item dropdown-header">
+            <h6 class="text-white"> Sort By </h6> 
+        </li>
+        <li class="dropdown-header">
+                <a class="dropdown-item" href="{% url 'products' %}?sort=price_asc">Price (low to high)</a>
+                <a class="dropdown-item" href="{% url 'products' %}?sort=price_desc">Price (high to low)</a>
+                <a class="dropdown-item" href="{% url 'products' %}?sort=name_asc">Name (A-Z)</a>
+                <a class="dropdown-item" href="{% url 'products' %}?sort=name_desc">Name (Z-A)</a>
+        </li>
+        <li class="nav-item dropdown-header">
+            <h6 class="text-white"> Categories </h6> 
+        </li>
+        <li class="dropdown-header">
+            {% for category in categories %}
+                <a class="dropdown-item {% if current_category == category.name %} active {% endif %}" href="{% url 'products' %}?category={{ category.name }}">
+                    {{ category.friendly_name }}
+                </a>
+            {% endfor %}
+        </li>
+    </ul>
+</div>
