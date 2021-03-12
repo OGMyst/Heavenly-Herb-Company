@@ -155,16 +155,17 @@ h5{
 
 /*-----------------------------------------PHONE PORTRAIT MEDIA QUERY-----------------------------------------*/
 @media only screen and (max-width: 450px){
-    .product-card{
+.product-card{
     width: 100%;
     margin-bottom: 15px;
-    margin-right: 1.33%;
-   flex-wrap: wrap;  
+    padding-bottom: 10px;
+    flex-wrap: nowrap;
 }
 
 .product-img{
-    width: 40%;
-    margin: 5px 5%;
+    padding: 1px 2px;
+    height: 140px;
+    width: 100px;
 }  
 
 .pd-image{
@@ -174,5 +175,23 @@ h5{
 
 .mobile-hidden{
     display: none;
+}
+
+h6{
+    font-size: 16px;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 7px;
+    font-size: 12px;
+}
+
+.product-desc {
+    font-size: 11px;
+}
+
+.add-item-btn{
+    padding: 2px 0 7px;
 }
 }
