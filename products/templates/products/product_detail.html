@@ -6,35 +6,11 @@
 {% endblock %}
 {% block content %}
 
-<!----------------------------- SUB-NAVBAR -------------------------->
-
-    <div class="container-fluid bg-blue pd-sub-nav">
-        <div class="row">
-            <div class="col-2">
-            </div>
-            <div class="col-2">
-            </div>
-            
-            <div class="col-4 my-auto py-1 py-lg-0">
-                <form method="GET" action="#">
-                        <div class="input-group w-100">
-                            <input class="form-control border rounded-0" type="text" name="q" placeholder="Search our products">
-                            <div class="input-group-append">
-                                <button class="form-control btn border rounded-0" type="submit">
-                                    <span class="icon">
-                                        <i class="fas fa-search"></i>
-                                    </span>
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-            </div>
-        </div>
-    </div>
-
 <!----------------------------- PRODUCT -------------------------->
 
-    <div class="container-fluid bg-off-white d-flex pd-container">
+    <div class="container-fluid bg-off-white pd-container">
+        <h3 class="text-center"> {{ product.name }}</h3>
+        <div class="pd-content">
             {% if product.image %}
             <div class="pd-image-container">
                 <img class="pd-image" src="{{ product.image.url }}">
@@ -45,7 +21,6 @@
             </div>
             {% endif %}
             <div class="pd-right-container">
-                <h3> {{ product.name }}</h3>
                 <p class="pd-desc"><strong>Description:</strong> {{ product.description }} </p>
                 <p class="pd-desc"><strong>Instructions for use:</strong> {{ product.directions }} </p>
                 <p class="pd-desc"><strong>Ingredients:</strong> {{ product.ingredients }} </p>
@@ -79,14 +54,14 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-12">
-                            <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0 mt-3">
+                        <div class="col-12 pr-3">
+                            <a href="{% url 'products' %}" class="btn pd-return-button mt-3">
                                 <span class="icon">
                                     <i class="fas fa-chevron-left"></i>
                                 </span>
                                 <span class="text-uppercase">Keep Shopping</span>
                             </a>
-                            <input type="submit" class="btn rounded-0 text-uppercase green-button gold-text mt-3" value="Add to Bag">
+                            <input type="submit" class="btn text-uppercase pd-cta green-button gold-text mt-3" value="Add to Bag">
                         </div>
                         <input type="hidden" name="redirect_url" value="{{ request.path }}">
                     </div>
@@ -98,6 +73,7 @@
                 </div>
                 {% endif %}
             </div>
+        </div>
     </div>
 {% endblock %}
 

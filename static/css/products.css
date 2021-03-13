@@ -134,9 +134,15 @@ h5{
 }
 
 .pd-container{
-    padding: 15px 40px;
-    flex-wrap: wrap;
-    min-height: calc(100vh - 191px);
+    padding: 35px 10px;
+    min-height: calc(100vh - 133px);
+    margin-top: 83px;
+}
+
+.pd-content{
+    padding: 50px 18%;
+    display: flex;
+    justify-content: center;
 }
 
 .pd-image{
@@ -151,8 +157,17 @@ h5{
 
 .pd-desc{
     font-weight: 400;
+    font-size: 15px;
 }
 
+.pd-return-button{
+    padding-left: 0;
+}
+
+.pd-cta{
+    position: relative;
+    float: right;
+}
 /*-----------------------------------------PHONE PORTRAIT MEDIA QUERY-----------------------------------------*/
 @media only screen and (max-width: 450px){
 .product-card{
@@ -169,9 +184,40 @@ h5{
 }  
 
 .pd-image{
-    width: 100%;
     margin-bottom: 5px;
+    height: 250px;
 } 
+
+.pd-right-container{
+    padding: 0 15px;
+    text-align: justify;
+    width: 100%
+}
+
+.pd-desc{
+    margin-bottom: 40px;
+}
+
+.pd-return-button{
+    font-size: 14px;
+}
+
+.pd-cta{
+    font-size: 15px;
+}
+
+.input-group-prepend{
+    height: 40px;
+}
+
+.qty-input{
+    height: 40px;
+    font-size: 15px;
+}
+
+.input-group-append{
+    height: 40px;
+}
 
 .mobile-hidden{
     display: none;
@@ -193,5 +239,16 @@ p {
 
 .add-item-btn{
     padding: 2px 0 7px;
+}
+
+.pd-content{
+    padding: 20px 10px;
+    display: block;
+}
+
+.pd-image-container{
+    padding-bottom: 25px;
+    display: flex;
+    justify-content: center;
 }
 }
