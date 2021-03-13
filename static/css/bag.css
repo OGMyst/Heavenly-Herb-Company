@@ -1,3 +1,8 @@
+.bag-container{
+    padding: 35px 10px;
+    min-height: calc(100vh - 220px);
+}
+
 .basket-no-item{
     margin: 100px 0;
     font-size: 1.2;
@@ -5,15 +10,10 @@
 
 .basket-box{
     width: 75%;
-    border: solid 3px #000000;
-    border-top: solid 3px #000000;
-    border-bottom-width: 1px;
 }
 
 .basket-top{
-    padding: 5px 10px;
-    border-top-width: 2px;
-    border-bottom: solid 3px #000000;
+    padding: 20px 10px 0;
     margin: 0 0;
 }
 
@@ -22,8 +22,8 @@
 }
 
 .item-summary{
-    padding: 10px 5px;
-    border-bottom: solid 2px #000000;
+    padding: 20px 5px 30px;
+    border-bottom: solid 3px #000000;
     margin: 0 0;
 }
 
@@ -33,4 +33,47 @@
 
 .update-link{
     cursor: pointer;
+}
+
+.product-img{
+    height: 100px;
+    width: 80px;
+    border-radius: 5px;
+}
+
+.decrement-qty,
+.qty_input,
+.increment-qty{
+    height: 30px;
+    font-size: 14px;
+}
+
+.qty_input{
+    width: 70px
+}
+
+.order-summary{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+}
+
+.bag-cta{
+    position: relative;
+    float: right;
+    padding: 8px 15px 2px;
+    width: 350px;
+    border-radius: 10px;
+    text-align: center;
+    background-color: #18451C;
+    color: #FBD300;
+    font-size: 15px;
+}
+
+.add-item-text{
+   font-size: 20px; 
+}
+
+.keep-shopping{
+    padding-left: 0;
 }
