@@ -117,9 +117,10 @@
                         </div>
                     </div>
             {% endfor%}
-        <div class="col-12 pagination">
+        <!----------------------------- PAGINATION -------------------------->
+        <div class="w-100 pagination">
             <span class="step-links w-100 d-flex">
-                <div class="previous-link ">
+                <div class="previous-link text-right">
                     {% if page_obj.has_previous %}
                         <a href="?page=1">&laquo; first</a>
                         <a href="?page={{ page_obj.previous_page_number }}">previous</a>

@@ -20,6 +20,15 @@ h1, h3, h5, h6, .btn{
     font-weight: 700;
 }
 
+a {
+    color: #1F7727;
+}
+
+a:hover {
+    color: #FBD300;
+    text-decoration: none;
+}
+
 .green-button{
     background-color: #18451C;
     border-radius: 10px;

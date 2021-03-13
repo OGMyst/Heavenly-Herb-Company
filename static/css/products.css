@@ -86,11 +86,15 @@ h5{
 
 .previous-link{
     width: 45%;
-    align-content: flex-end
 }
 
+.current{
+    padding: 0 10px
+}
+
+.previous-link ,
 .next-link{
-    width: 45%;
+    padding: 0 40px;
 }
 
 .subnav-mobile {
@@ -126,6 +130,10 @@ h5{
 
 .dropdown-item > .active{
     color: #FFDA16;
+}
+
+.pagination{
+    padding: 15px 0 40px;
 }
 /* -----------------------------------PRODUCT_DETAIL---------------------------- */
 .pd-sub-nav{
@@ -182,7 +190,17 @@ h5{
     height: 140px;
     width: 100px;
 }  
+.step-links{
+    font-size: 14px;
+}
+.previous-link{
+    width: 35%;
+}
 
+.previous-link,
+.next-link{
+    padding: 0 5px;
+}
 .pd-image{
     margin-bottom: 5px;
     height: 250px;
