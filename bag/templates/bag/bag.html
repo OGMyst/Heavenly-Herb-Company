@@ -17,40 +17,44 @@
 
     <div class="container-fluid bg-off-white d-flex blue-border bag-container justify-content-center">
         {% if bag_items %}
-            <div class="basket-box">
+            <div class="basket-box w-100 w-md-75">
                 <div class="row basket-top">
-                    <div class="col-6">
-                        <h6>Items</h6>
+                    <div class="col-md-6 col-12">
+                        <h6 class="bag-items-header">Items</h6>
                     </div>
-                    <div class="col-2 d-flex justify-content-center">
-                        <h6>Price £</h6>
+                    <div class="col-2 d-md-flex d-none justify-content-center">
+                        <h6>Price</h6>
                     </div>
-                    <div class="col-2 d-flex justify-content-center">
+                    <div class="col-2 d-md-flex d-none justify-content-center">
                         <h6>Quantity</h6>
                     </div>
-                    <div class="col-2 d-flex justify-content-center">
+                    <div class="col-2 d-md-flex d-none justify-content-center">
                         <h6>Sub-Total</h6>
                     </div>
                 </div>
                 {% for bag_item in bag_items %}
                     <div class="row item-summary">
-                        <div class="col-6 d-flex">
+                        <div class="col-md-6 col-12 d-flex">
                             <a href="#" class="pr-3"> 
                                 <div class="img-box">
                                     <img class="product-img" src="{{ bag_item.product.image.url }}" alt="{{ bag_item.product.name }}">
                                 </div>
                             </a>
-                            <h6 class="font-s-17"> {{ bag_item.product.name }}</h6>
+                            <div>
+                                <h6 class="font-s-17"> {{ bag_item.product.name }}</h6>
+                                <p class="font-s-14 d-flex d-md-none"> £ {{ bag_item.product.price }}</p>
+                            </div>
                         </div>
-                        <div class="col-2 d-flex justify-content-center">
-                            <p class="font-s-14">{{ bag_item.product.price }}</p>
+                        <div class="col-2 d-md-flex d-none justify-content-center">
+                            <p class="font-s-14">£ {{ bag_item.product.price }}</p>
                         </div>
-                        <div class="col-2">
-                            <form id="update-form-{{ bag_item.item_id }}" class="form text-center" action="{% url 'adjust_bag' bag_item.item_id %}" method="POST">
+                        <div class="col-md-2 col-6 qty-box d-md-flex justify-content-md-center">
+                            <p class="d-block d-md-none mobile-qty-text">Quantity</p>
+                            <form id="update-form-{{ bag_item.item_id }}" class="form text-md-center" action="{% url 'adjust_bag' bag_item.item_id %}" method="POST">
                                 {% csrf_token %} 
                                 <div class="form-row">
-                                    <div class="col-12 d-flex justify-content-center">
-                                        <div class="form-group">
+                                    <div class="col-12 d-flex justify-content-md-center">
+                                        <div class="form-group mobile-qty-form">
                                             <div class="input-group">
                                                 <div class="input-group-prepend">
                                                     <button type="button" class="decrement-qty btn py-0 rounded-0" 
@@ -80,22 +84,26 @@
                                 <a class="update-link text-info" onclick="changeQuantity('update-form-{{ bag_item.item_id }}')"><small>Update</small></a>
                             </form>
                         </div>
-                        <div class="col-2 d-flex justify-content-center">
-                            <p>{{ bag_item.sub_total }}</p>
+                        <div class="col-md-2 col-6 d-md-flex sub-total justify-content-md-center">
+                            <p class="d-block d-md-none text-right">Sub-Total</p>
+                            <p class="text-right">£ {{ bag_item.sub_total }}</p>
                         </div>
                     </div>
                 {% endfor %}
                 <div class="row basket-top">
-                    <div class="col-6">
+                    <div class="col-6 d-none d-md-block">
                     </div>
-                    <div class="col-2 d-flex justify-content-center">
-                        <h6>Delivery £</h6>
+                    <div class="col-md-2 col-12 d-flex justify-content-md-center">
+                        <h6 class="font-s-17">Delivery</h6>
+                        <p class=" d-block d-md-none align-right font-s-14">£ {{ delivery }}</p>
                     </div>
-                    <div class="col-2 d-flex justify-content-center">
-                        <h6>No. Items</h6>
+                    <div class="col-md-2 col-12 d-flex justify-content-md-center">
+                        <h6 class="font-s-17">No. Items</h6>
+                        <p class="d-block d-md-none align-right font-s-14">{{ product_count }}</p>
                     </div>
-                    <div class="col-2 d-flex justify-content-center">
-                        <h6>Total</h6>
+                    <div class="col-md-2 col-12 d-flex justify-content-md-center">
+                        <h6 class="font-s-17">Total</h6>
+                        <p class="d-block d-md-none align-right">£ {{ grand_total }}</p>
                     </div>
                 </div>
                 <div class="row basket-top">
@@ -103,27 +111,29 @@
                     </div>
                     <div class="col-6 order-summary">
                         <div class="col-4 d-flex justify-content-center">
-                            <p class="font-s-14"> {{ delivery }}</p>
+                            <p class="font-s-14 d-none d-md-block">£ {{ delivery }}</p>
                         </div>
                         <div class="col-4 d-flex justify-content-center">
-                            <p class="font-s-14">{{ product_count }}</p>
+                            <p class="font-s-14 d-none d-md-block">{{ product_count }}</p>
                         </div>
                         <div class="col-4 d-flex justify-content-center">
-                                <p>{{ grand_total }}</p>
+                                <p class="d-none d-md-block">£ {{ grand_total }}</p>
                         </div>
                     </div>
-                    <div class="col-12 d-flex pt-5">
-                        <a href="{% url 'products' %}" class="btn text-left keep-shopping col-4 btn-outline-black">
+                    <div class="col-12 d-flex pt-md-5 pt-3">
+                        <a href="{% url 'products' %}" class="btn text-left keep-shopping col-4">
                             <span class="icon">
                                 <i class="fas fa-chevron-left"></i>
                             </span>
                             <span class="text-uppercase ">Keep Shopping</span>
                         </a>
-                        <a href="{% url 'checkout' %}" class="col-8">
-                            <div class="add-item-btn mt-2 bag-cta">
-                                <h5 class="add-item-text">Continue to Secure Checkout</h5>
-                            </div>
-                        </a>
+                        <div class="col-md-8">
+                            <a href="{% url 'checkout' %}">
+                                <div class="add-item-btn mt-2 bag-cta">
+                                    <h5 class="add-item-text">Continue to Secure Checkout</h5>
+                                </div>
+                            </a>
+                        </div>
                     </div>  
                 </div>
             </div>

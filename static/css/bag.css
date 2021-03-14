@@ -1,3 +1,8 @@
+html {
+    background: url('/media/alt-background.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
 .bag-container{
     padding: 35px 10px;
     min-height: calc(100vh - 220px);
@@ -76,4 +81,82 @@
 
 .keep-shopping{
     padding-left: 0;
+}
+
+@media only screen and (max-width: 768px){
+.align-right{
+    position: absolute;
+    right: 10px;
+}
+ 
+.bag-items-header{
+    font-size: 30px;
+}
+
+.bag-container{
+    padding-top: 0;
+}
+
+.basket-top{
+    padding: 10px 5px; 
+}
+
+.qty-box,
+.sub-total{
+    padding-top: 15px;
+}
+
+.form-control{
+    width: 40px;
+    padding: 0 10px;
+    font-size: 12px;
+}
+
+.increment-qty,
+.decrement-qty{
+    font-size: 10px;
+    padding: 0 10px;
+}
+
+.remove-item,
+.update-link{
+    font-size: 14px;
+}
+
+.form-row >.col-12{
+    padding-top: 20px;
+    padding-left: 0
+}
+
+.bag-cta{
+    width: 100%;
+}
+
+.add-item-text{
+    font-size: 16px;
+}
+
+.keep-shopping{
+    font-size: 17px;
+}
+}
+
+@media only screen and (max-width: 450px){
+.bag-qty{
+    padding: 10px
+}
+
+.mobile-qty-form{
+    margin-bottom: 5px;
+}
+
+.mobile-qty-text{
+    width: 70%;
+    text-align: left;
+    margin-bottom: 5px;
+}
+    
+.bag-container{
+    padding-top: 15px
+}
 }
