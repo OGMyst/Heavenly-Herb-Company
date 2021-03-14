@@ -73,6 +73,14 @@
     border: 1px solid #000;
 }
 
+.align-right{
+    position: relative;
+    float: right;
+}
+
+.checkout-img{
+    border-radius: 5px
+}
 /* ----------------------------LOADING OVERLAY------------------------ */
 #loading-overlay {
 	display: none;
@@ -91,4 +99,14 @@
     justify-content: center;
     margin: 0;
     height: 100%;
+}
+
+@media only screen and (max-width: 768px){
+    .control-group{
+        width: 100%;
+    }
+
+    .stripe-style-input{
+        width: 100%;
+    }
 }
