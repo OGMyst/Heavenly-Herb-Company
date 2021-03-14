@@ -7,26 +7,50 @@ let europeanCountryCodes = [
  'PT', 'RO', 'RU', 'SM', 'RS', 'SK', 'SI', 'ES', 'SE', 'CH', 'TR', 'UA', 
  'VA', 
 ]
+const STANDARD_DELIVERY_COST_UK = 4
+const STANDARD_DELIVERY_COST_EU = 9.95
+const STANDARD_DELIVERY_COST_WORLD = 25
+const FREE_DELIVERY_THRESHOLD_UK = 40
+const FREE_DELIVERY_THRESHOLD_EU = 50
+const FREE_DELIVERY_THRESHOLD_WORLD = 80
 
-var countrySelect = document.getElementById('id_country');
-let deliveryCostTag = document.getElementById('delivery_cost')
+let countrySelect = document.getElementById('id_country');
+let deliveryLabel = document.getElementById('delivery_label');
+let deliveryCostTag = document.getElementById('delivery_cost');
+let orderTotalString = document.getElementById('order-total');
+let orderTotal = parseFloat(orderTotalString.innerHTML.replace("£", ""));
+let grandTotalString = document.getElementById('grand-total');
 
 // Changes displayed delivery cost on checkoutpage
 countrySelect.addEventListener('change', function () {
 
     let countrySelectValue = countrySelect.value
     let isInEurope = Boolean(europeanCountryCodes.find((europeanCountryCode) => europeanCountryCode === countrySelectValue));
+    
 
     if (countrySelectValue === 'GB'){
-        document.getElementById('delivery_label').innerHTML = 'Standard UK Delivery'
+        deliveryRegionCost = 4;
+        deliveryRegionName = 'Standard UK Delivery';
+        deliveryThreshold = FREE_DELIVERY_THRESHOLD_UK;
+
     }else if (isInEurope == true){
-        deliveryCostTag.innerHTML = '£' + parseFloat(9.95)
-        document.getElementById('delivery_label').innerHTML = 'EU Delivery'
+        deliveryRegionCost = 9.95;
+        deliveryRegionName = 'EU Delivery';
+        deliveryThreshold = FREE_DELIVERY_THRESHOLD_EU;
     
     } else {
-        deliveryCostTag.innerHTML = '£' + parseFloat(25) + '.00'
-        document.getElementById('delivery_label').innerHTML = 'Global Delivery'
+        deliveryRegionCost = 25;
+        deliveryRegionName = 'Global Delivery';
+        deliveryThreshold = FREE_DELIVERY_THRESHOLD_WORLD;
     }
+
+    if (orderTotal < deliveryThreshold){
+        grandTotalString.innerHTML = "£" + (orderTotal + deliveryRegionCost).toFixed(2);
+        deliveryCostTag.innerHTML = '£' + deliveryRegionCost.toFixed(2);
+        deliveryLabel.innerHTML = deliveryRegionName;
+
+    }
+
 
     deliveryCostTag.classList.add('change-text-color')
     setTimeout(removeChangeTextColor, 1000)
