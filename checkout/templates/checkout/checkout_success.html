@@ -14,18 +14,29 @@
 
 <!----------------------------- CHECKOUT FORM -------------------------->
 
-    <div class="container-fluid bg-off-white products-container blue-border">
+    <div class="container-fluid bg-off-white products-container blue-border px-3">
         <div class="row">
         <!----------------------------- ITEM SUMMARY -------------------------->
-            <div class="col">
+            <div class="col-12 text-md-center">
                 <hr>
-                <h2 class="logo-font mb-4">Thank You</h2>
+                <div class="col-12 d-md-flex mb-3 pl-0">
+                    <h2 class="logo-font col-md-4 pl-0">Thank You</h2>
+                    <div class="order-md-first col-md-4 text-left pl-0">
+                        <a href="{% url 'products' %}" class="btn green-button gold-text keep-shopping">
+                            <span class="icon">
+                                <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span>Return to Homepage </span>
+                        </a>
+                    </div>
+                </div>
                 <hr>
+
                 <p>Your order information is below. A confirmation email will be sent to <strong>{{ order.email }}</strong>.</p>
             </div>
         </div>
 
-        <div class="row">
+        <div class="row d-md-flex justify-content-md-center">
             <div class="col-12 col-lg-7">
                 <div class="order-confirmation-wrapper mb-5 p-2 border">
                     <div class="row">
@@ -78,29 +89,29 @@
                     </div>
 
                     <div class="row">
-                        <div class="col-12 col-md-4">
+                        <div class="col-6 col-md-4">
                             <p class="mb-0">Full Name</p>
                         </div>
-                        <div class="col-12 col-md-8 text-md-right">
+                        <div class="col-6 col-md-8 text-right">
                             <p class="mb-0">{{ order.full_name }}</p>
                         </div>
                     </div>
 
                     <div class="row">
-                        <div class="col-12 col-md-4">
+                        <div class="col-6 col-md-4">
                             <p class="mb-0">Address 1</p>
                         </div>
-                        <div class="col-12 col-md-8 text-md-right">
+                        <div class="col-6 col-md-8 text-right">
                             <p class="mb-0">{{ order.street_address1 }}</p>
                         </div>
                     </div>
 
                     {% if order.street_address2 %}
                     <div class="row">
-                        <div class="col-12 col-md-4">
+                        <div class="col-6 col-md-4">
                             <p class="mb-0">Address 2</p>
                         </div>
-                        <div class="col-12 col-md-8 text-md-right">
+                        <div class="col-6 col-md-8 text-right">
                             <p class="mb-0">{{ order.street_address1 }}</p>
                         </div>
                     </div>
@@ -108,49 +119,49 @@
 
                     {% if order.county %}
                     <div class="row">
-                        <div class="col-12 col-md-4">
+                        <div class="col-6 col-md-4">
                             <p class="mb-0">County</p>
                         </div>
-                        <div class="col-12 col-md-8 text-md-right">
+                        <div class="col-6 col-md-8 text-right">
                             <p class="mb-0">{{ order.county }}</p>
                         </div>
                     </div>
                     {% endif %}
 
                     <div class="row">
-                        <div class="col-12 col-md-4">
+                        <div class="col-6 col-md-4">
                             <p class="mb-0">Town or City</p>
                         </div>
-                        <div class="col-12 col-md-8 text-md-right">
+                        <div class="col-6 col-md-8 text-right">
                             <p class="mb-0">{{ order.town_or_city }}</p>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-6 col-md-4">
+                            <p class="mb-0">Country</p>
+                        </div>
+                        <div class="col-6 col-md-8 text-right">
+                            <p class="mb-0">{{ order.country }}</p>
                         </div>
                     </div>
 
                     {% if order.postcode %}
                     <div class="row">
-                        <div class="col-12 col-md-4">
+                        <div class="col-6 col-md-4">
                             <p class="mb-0">Postal Code</p>
                         </div>
-                        <div class="col-12 col-md-8 text-md-right">
+                        <div class="col-6 col-md-8 text-right">
                             <p class="mb-0">{{ order.postcode }}</p>
                         </div>
                     </div>
                     {% endif %}
 
                     <div class="row">
-                        <div class="col-12 col-md-4">
-                            <p class="mb-0">Country</p>
-                        </div>
-                        <div class="col-12 col-md-8 text-md-right">
-                            <p class="mb-0">{{ order.country }}</p>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-12 col-md-4">
+                        <div class="col-6 col-md-4">
                             <p class="mb-0">Phone Number</p>
                         </div>
-                        <div class="col-12 col-md-8 text-md-right">
+                        <div class="col-6 col-md-8 text-right">
                             <p class="mb-0">{{ order.phone_number }}</p>
                         </div>
                     </div>

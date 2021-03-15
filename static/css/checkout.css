@@ -81,6 +81,11 @@
 .checkout-img{
     border-radius: 5px
 }
+
+.keep-shopping{
+    font-size: 17px;
+    width: 220px
+}
 /* ----------------------------LOADING OVERLAY------------------------ */
 #loading-overlay {
 	display: none;
@@ -102,11 +107,20 @@
 }
 
 @media only screen and (max-width: 768px){
-    .control-group{
-        width: 100%;
-    }
+.control-group{
+    width: 100%;
+}
 
-    .stripe-style-input{
-        width: 100%;
-    }
+.stripe-style-input{
+    width: 100%;
+}
+
+.small{
+    font-size: 11px
+}
+
+.keep-shopping{
+    font-size: 14px;
+    width: 190px
+}
 }
