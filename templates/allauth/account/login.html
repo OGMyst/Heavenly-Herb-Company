@@ -36,22 +36,22 @@
     {% endif %} -->
 
     <form class="login" method="POST" action="{% url 'account_login' %}">
-    {% csrf_token %}
-    
-    {{ form|crispy }}
+        {% csrf_token %}
+        
+        {{ form|crispy }}
 
-    {% if redirect_field_value %}
-    <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-    {% endif %}
-    <a class="button secondaryAction" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
-    <div class="d-flex mt-5">
-        <div class="create-account-link">
-            <a href="{{ signup_url }}">Create Account</a>
+        {% if redirect_field_value %}
+        <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+        {% endif %}
+        <a class="button secondaryAction" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
+        <div class="d-flex mt-5">
+            <div class="create-account-link">
+                <a href="{{ signup_url }}">Create Account</a>
+            </div>
+            <div class="sign-in-button">
+                <button class="primaryAction" type="submit">{% trans "Sign In" %}</button>
+            </div>
         </div>
-        <div class="sign-in-button">
-            <button class="primaryAction" type="submit">{% trans "Sign In" %}</button>
-        </div>
-    </div>
     </form>
 
 {% endblock %}

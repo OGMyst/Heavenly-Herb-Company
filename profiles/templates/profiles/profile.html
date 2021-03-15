@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load account %}
 
 {% block extra_css %}
     <link rel="stylesheet" href="{% static 'css/profiles.css' %}">
@@ -12,63 +13,56 @@
 {% endblock %}
 {% block content %}
 
-<!----------------------------- PRODUCTS -------------------------->
+<!----------------------------- PROFILE -------------------------->
 
-    <div class="container-fluid bg-off-white profile-container">
+    <div class="container-fluid bg-off-white profile-container blue-border">
         <div class="row">
-            <div class="col-12 col-lg-3 page-divider">
-                <h5>General</h5>
-                <form class="mt-3" action="{% url 'profile' %}" method="POST" id="general-update-form">
-                    {% csrf_token %}
-                    {{ general_form|crispy }}
-                    <button class="btn rounded-0 text-uppercase float-right">Update Information</button>
-                    <input type="hidden" value="general-update-form" name="update-form">
-                </form>
-            </div>
-            <div class="col-12 col-lg-3 page-divider">
-                <h5>Your Address</h5>
-                <div class="address-container">
-                    {% for address in addresses %}
-                        <div class="address-box">
-                            <p> {{ address.full_name }} </p>
-                            <p class="font-weight-light"> {{ address.street_address1 }} </p>
-                            <p class="font-weight-light"> {{ address.street_address2 }}, {{ address.town_or_city }}</p>
-                            <p class="font-weight-light"> {{ address.postcode }} </p>
-                            <div class="d-flex">
-                                <p class="font-weight-light"> {{ address.phone_number }} </p>
-                                <div class="edit-delete-address">
-                                    <a href="{% url 'edit_address' address.address_number %}">Edit</a> | 
-                                    <a class="text-danger" href="{% url 'delete_address' address.address_number %}">Delete</a>
-                                </div>
-                            </div>
-                        </div>
-                    {% endfor %}
+            <div class="col-md-4">
+                <!--------------- GENERAL --------------->
+                <div class="col-12 page-divider pb-3">
+                    <h5>General</h5>
+                    <a href="{% url 'account_email' %}" class="font-s-16">Change Email</a>
+                    <a href="{% url 'account_change_password' %}" class="d-block font-s-16">Change Password</a>
                 </div>
-                <!-- <form class="mt-3" action="{% url 'profile' %}" method="POST" id="address-update-form">
-                    {% csrf_token %}
-                    {{ address_form|crispy }}
-                    <button class="btn rounded-0 text-uppercase float-right">Update Information</button>
-                    <input type="hidden" value="address-update-form" name="update-form">
-                </form> -->
+                <!--------------- ADDRESSES --------------->
+                <div class="col-12 page-divider">
+                    <h5>Your Address</h5>
+                    <div class="address-container d-sm-flex">
+                        {% for address in addresses %}
+                            <div class="address-box text-center text-sm-left font-s-14">
+                                <p> {{ address.full_name }} </p>
+                                <p class="font-weight-light"> {{ address.street_address1 }} </p>
+                                <p class="font-weight-light"> {{ address.street_address2 }}, {{ address.town_or_city }}</p>
+                                <p class="font-weight-light"> {{ address.postcode }} </p>
+                                    <p class="font-weight-light"> {{ address.phone_number }} </p>
+                                    <div class="edit-delete-address">
+                                        <a href="{% url 'edit_address' address.address_number %}">Edit</a> | 
+                                        <a class="text-danger" href="{% url 'delete_address' address.address_number %}">Delete</a>
+                                    </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
             </div>
-            <div class="col-12 col-lg-6">
+            <!------------- ORDER HISTORY ------------->
+            <div class="col-12 col-lg-8">
                 <h5>Order History</h5>
                 <table class="table table-sm table-borderless">
                         <thead>
                             <tr>
-                                <th>Order Number</th>
-                                <th>Date</th>
-                                <th>Items</th>
-                                <th>Order Total</th>
+                                <th class="OH-headers">Order Number</th>
+                                <th class="OH-headers">Date</th>
+                                <th class="OH-headers">Items</th>
+                                <th class="OH-headers">Order Total</th>
                             </tr>
                         </thead>
                         <tbody>
                             {% for order in orders %}
-                                <tr>
+                                <tr class="font-s-14">
                                     <td>
                                         <a href="{% url 'order_history' order.order_number %}"
                                         title="{{ order.order_number }}">
-                                            {{ order.order_number|truncatechars:6 }}
+                                            {{ order.order_number|truncatechars:12 }}
                                         </a>
                                     </td>
                                     <td>{{ order.date }}</td>
