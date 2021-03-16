@@ -19,13 +19,13 @@
         <div class="row">
             <div class="col-md-4">
                 <!--------------- GENERAL --------------->
-                <div class="col-12 page-divider pb-3">
+                <div class="page-divider pb-3">
                     <h5>General</h5>
                     <a href="{% url 'account_email' %}" class="font-s-16">Change Email</a>
                     <a href="{% url 'account_change_password' %}" class="d-block font-s-16">Change Password</a>
                 </div>
                 <!--------------- ADDRESSES --------------->
-                <div class="col-12 page-divider">
+                <div class="page-divider">
                     <h5>Your Address</h5>
                     <div class="address-container d-sm-flex">
                         {% for address in addresses %}

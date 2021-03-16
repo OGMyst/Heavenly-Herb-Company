@@ -7,7 +7,7 @@
 
 {% block content %}
     <div class="container-fluid bg-off-white login-container d-flex">
-        <!-- This empty div stops the allauth form from extending to the bottom of the page since the login container has a fixed height -->
+        <!-- This empty div stops the inner content extending to the bottom of the page since the parent container has a min height -->
         <div>
             <div class="allauth-form-inner-content">
                 {% block inner_content %}
