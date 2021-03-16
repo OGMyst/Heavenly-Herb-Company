@@ -126,11 +126,6 @@ h5{
     padding: .5rem 0px;
 }
 
-.dropdown-item{
-    font-size: 15px;
-    font-weight: 700;
-}
-
 .dropdown-item > .active{
     color: #FFDA16;
 }

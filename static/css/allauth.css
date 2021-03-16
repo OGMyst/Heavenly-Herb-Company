@@ -48,7 +48,7 @@ html {
     background-color: #18451C;  
     border: none;    
 }
-
+.secondaryAction:hover,
 .primaryAction:hover{
     color: #ffffff;
 }
@@ -56,4 +56,46 @@ html {
 .div_id_remember{
     margin-left: 3px;
     margin-bottom: 5px;
+}
+.ctrlHolder{
+    font-size: 14px;
+    padding-left: 30px;
+    padding-bottom: 50px
+}
+
+.email-list-heading{
+    font-size: 17px
+}
+
+.secondaryAction{
+    font-weight: 700;
+    font-size: 14px;
+    width: 35%;
+    padding: 10px 5px;
+    margin: 0 5px;
+    border-radius: 10px;
+    text-align: center;
+    color: #FBD300;
+    background-color: #18451C;  
+    border: none; 
+    position: relative;
+    float: right
+}
+
+.removeEmail{
+    border: none; 
+    background-color: #f8f8f8;
+    font-weight: 700;
+    font-size: 14px;
+    padding: 10px 5px;
+}
+
+#id_email{
+    margin-bottom: 10px;
+    border-style: solid;
+    border-color: #a29e9e;
+    border-radius: 5px;
+    width: 100%;
+    padding: 4px 7px;
+    font-size: 15px;  
 }
