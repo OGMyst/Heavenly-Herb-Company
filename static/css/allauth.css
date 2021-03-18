@@ -26,6 +26,7 @@ html {
     padding: 40px;
     border: 3px solid #7196CE;
     border-radius: 10px;
+    width: 110%;
 }
 
 .create-account-link{
@@ -60,17 +61,17 @@ html {
 .ctrlHolder{
     font-size: 14px;
     padding-left: 30px;
-    padding-bottom: 50px
+    padding-bottom: 5px
 }
 
 .email-list-heading{
-    font-size: 17px
+    font-size: 22px
 }
 
 .secondaryAction{
     font-weight: 700;
     font-size: 14px;
-    width: 35%;
+    width: 150px;
     padding: 10px 5px;
     margin: 0 5px;
     border-radius: 10px;
@@ -98,4 +99,95 @@ html {
     width: 100%;
     padding: 4px 7px;
     font-size: 15px;  
+}
+
+.add_email{
+    font-size: 15px;
+    padding-bottom: 45px;
+    display: flex;
+}
+
+#id_email{
+    font-size: 14px
+}
+
+.add-email-btn{
+    margin-top: 29px;
+}
+
+.add_email > p{
+    width: 75%;
+}
+
+.add-email-btn-box{
+    width: 25%;
+    margin-left: 20px;
+}
+
+.add-email-header {
+    font-size: 22px;
+}
+@media only screen and (max-width: 768px){
+.login-container{
+    padding-bottom: 50px;
+}
+
+.allauth-form-inner-content {
+    padding: 0 30px;
+    border: none;
+    width: 100%;
+}
+
+.manage-email{
+    font-size:30px;
+}
+
+.add-email-header{
+    font-size: 22px;
+}
+
+.add_email{
+    display: block;
+    padding-bottom: 20px;
+}
+
+#id_email{
+    margin-bottom: 0;
+    width: 100%;
+}
+
+.add_email > p{
+    margin-bottom: 0;
+    width: 100%;
+}
+
+.add-email-btn-box{
+    margin-left: 0;
+    width: 100%;
+}
+
+.buttonHolder{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.removeEmail{
+    width: 100%;
+    padding:20px 0 30px;
+}
+
+.ctrlHolder{
+    font-size: 12px;
+    padding-left: 0;
+}
+.secondaryAction{
+    float: none;
+    margin: 5px 5px;
+}
+
+.add-email-btn{
+    margin: 20px 0;
+}
+
 }
