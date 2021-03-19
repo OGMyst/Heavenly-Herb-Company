@@ -127,6 +127,24 @@ html {
 .add-email-header {
     font-size: 22px;
 }
+
+.forgot-password-text{
+    width: 500px;
+    text-align: center;
+    font-size: 16px
+}
+
+.password-reset-text{
+    font-size: 16px
+}
+
+.password_reset > #div_id_email{
+    padding-bottom: 30px
+}
+
+.reset-password-btn{
+    margin: 0 0;
+}
 @media only screen and (max-width: 768px){
 .login-container{
     padding-bottom: 50px;
@@ -138,6 +156,8 @@ html {
     width: 100%;
 }
 
+.password-reset-header,
+.change-password,
 .manage-email{
     font-size:30px;
 }
@@ -188,6 +208,30 @@ html {
 
 .add-email-btn{
     margin: 20px 0;
+}
+
+.textinput{
+    width:100%;
+}
+
+.reset-password-btn,
+.change-password-btn{
+    float: right;
+}
+
+.password_change{
+    padding-top: 20px;
+    font-size: 14px
+}
+    
+.password_change > #div_id_password2{
+    margin-bottom: 50px
+}
+
+.password-reset-text,
+.forgot-password-text{
+    width: auto;
+    font-size: 14px;
 }
 
 }
