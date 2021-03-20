@@ -121,6 +121,7 @@ html {
 .remove-item,
 .update-link{
     font-size: 14px;
+    cursor: pointer;
 }
 
 .form-row >.col-12{
