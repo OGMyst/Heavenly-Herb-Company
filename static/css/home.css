@@ -11,14 +11,11 @@ html {
     min-height: calc(100vh - 190px);
 }
 
-#left-arrow{
-    min-width:20%; 
-}
-
 #main-logo{
     width: 60%;
     display: flex;
     justify-content: center;
+    margin: 0 20%;
 }
 
 #main-logo-background{
@@ -34,6 +31,30 @@ html {
     margin-left: 3px;
 }
 
+.motto{
+    font-size: 25px;
+    margin: 40px 35%;
+    padding: 20px 0;
+    background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.8) 20%, rgba(255,255,255,0.8) 80%, rgba(255,255,255,0) 100%);
+}
+
+.home-cta-box{
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+.home-cta{
+    padding: 8px 10px;
+    margin: 0 10px;
+    width: 150px;
+    text-align: center;
+    font-size: 17px;
+}
+
+.home-cta:hover{
+    color: #ffffff;
+}
 @media only screen and (max-width: 450px){
 
 #logo{
@@ -48,5 +69,16 @@ html {
 
 .navbar{
     padding: .5rem 1.5rem;
+}
+
+.motto{
+    font-size: 18px;
+    margin: 40px 10px;
+} 
+
+.home-cta{
+    width: 60%;
+    margin-bottom: 10px;
+    font-size: 14px
 }
 }

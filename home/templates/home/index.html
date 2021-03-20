@@ -7,11 +7,18 @@
 
 {% block content %}
     <div id="main-content-home">
-        <div id="left-arrow">
-        </div>
-        <div id="main-logo">
-            <div id="main-logo-background">
-                <img src="https://heavenly-herb-company.s3.amazonaws.com/media/logo.png" id="logo">
+        <div class="w-100">
+            <div id="main-logo">
+                <div id="main-logo-background">
+                    <img src="https://heavenly-herb-company.s3.amazonaws.com/media/logo.png" id="logo">
+                </div>
+            </div>
+            <div class="motto">
+                <p class="text-center">Handmade Herbal Products</p>
+                <div class="home-cta-box">
+                    <a class="green-button gold-text home-cta" href="{% url 'about_us' %}"> About Us</a>
+                    <a class="green-button gold-text home-cta" href="{% url 'products' %}"> View Products</a>
+                </div>
             </div>
         </div>
     </div>
