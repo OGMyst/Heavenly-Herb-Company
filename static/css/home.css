@@ -18,16 +18,16 @@ html {
 }
 
 #main-logo-background{
-    width: 406px;
-    height: 406px;
-    border-radius: 405px;
+    width: 35%;
+    border-radius: 60%;
     background-color: #000000;
 }
 
 #logo{
-    height: 400px;
     margin-top: 3px;
-    margin-left: 3px;
+    margin-left: 1%;
+    padding-bottom: 1%;
+    width: 98%;
 }
 
 .motto{
@@ -56,20 +56,41 @@ html {
 }
 
 .about-us-container{
-    padding: 20px 25%;
+    padding: 20px 20%;
     line-height: 40px;
-    font-weight: 400
+    font-weight: 400;
+    text-align: justify;
 }
+
+.about-us-images{
+    padding: 20px 0 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.about-us-image{
+    width: 100%;
+    border-radius: 10px;
+    margin: 0 30px;
+    
+}
+
+@media only screen and (max-width: 1366px){
+#main-logo-background{
+    width: 45%;
+}
+}
+
+@media only screen and (max-width: 992px){
+#main-logo-background{
+    width: 60%;
+}
+}
+
 @media only screen and (max-width: 768px){
 
-#logo{
-    height: 200px;
-}
-
 #main-logo-background{
-    width: 206px;
-    height: 206px;
-    border-radius: 205px;
+    width: 80%;
 }
 
 .navbar{
@@ -85,5 +106,12 @@ html {
     width: 60%;
     margin-bottom: 10px;
     font-size: 14px
+}
+}
+
+@media only screen and (max-width: 450px){
+
+#main-logo-background{
+    width: 100%;
 }
 }
