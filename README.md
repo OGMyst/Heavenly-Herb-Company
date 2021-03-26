@@ -2,6 +2,7 @@
 
 ![Responsiveness across devices](media/Mukta.png)
 
+
 ## Introduction
 
 Live project can be found at [Heavenly Herb Company](heavenly-herb-company.herokuapp.com/)
@@ -9,12 +10,44 @@ Live project can be found at [Heavenly Herb Company](heavenly-herb-company.herok
 This an e-commerce website developed by Hugh Padmore. This website was built to be eventually used by heavenly herb company as their live site. The company
 sells natural, homemade herbal products. 
 
+## Table of Contents:
+
+1. [UX](#UX)
+    1. [Project Goals](#project-goals)
+    2. [User Goals](#user-goals)
+    3. [User Stories](#user-Stories)
+    4. [Site Owner Goals](#site-owner-goals)
+2. [User Requirements and Expectations](#user-requirements-and-expectations)
+    1. [Requirements](#requirements)
+    2. [Expectations](#expectations)
+3. [Wireframes](#wireframes)
+4. [Features](#Features)
+    1. [Existing Features](#existing-features)
+    2. [Future Features](#future-features)
+5. [Information Architecture](#Information-architecture)
+    1. [Database Choice](#database-choice)
+    2. [Data Models](#data-models)
+6. [Technologies](#Technologies)
+    1. [Languages](#Languages)
+    2. [Libraries and frameworks](#Libraries-and-frameworks)
+    3. [Tools](#Tools)
+    4. [Databases](#Databses)
+7. [Testing](#Testing)
+
+8. [Deployment](#Deployment)
+    1. [Instructions](#Instructions)
+    2. [Deployment to Heroku](#Deployment-to-Heroku)
+6. [Credits](#Credits)
+    1. [Media](#Media)
+7. [Acknowledgment](#Acknowledgment)
+
 ## UX (User Experience)
 
 ### Project Goals
 
 The purpose of this project is to create a site which users can buy herbal products and learn more about the company. The site is focused around nature with 
-blue, green and yellow as the primary colours which represent the sky, earth and sun respectively.
+blue, green and yellow as the primary colours which represent the sky, earth and sun respectively. The site also aims to have a personal feel to reflect the homemade aspect 
+of the products so I have used Noto Sans Italic to give the text a handwritten look.  
 
 #### **User Goals:**
 
@@ -97,7 +130,7 @@ View my wireframes [here](https://github.com/OGMyst/Heavenly-Herb-Company/blob/m
 - During the development of this project, I worked with the standard **sqlite3** database that comes installed with Django.
 - In the production version the database is a **PostgreSQL** database, hosted and provided by **Heroku**.
 
-### Heavenly Herb Company Data Models:
+### Data Models:
 
 The user model used in this project is provided by Django. You can find more information about this [here](https://docs.djangoproject.com/en/3.0/ref/contrib/auth/)
 
@@ -192,9 +225,7 @@ The user model used in this project is provided by Django. You can find more inf
 | Subject        | subject        | max_length=254, null=True, blank=True      | CharField   |
 | Message        | message        |                                            | TextField   |
 
-## Technologies Used
-
-The technologies used were:
+## Technologies 
 
 ### Languages
 
