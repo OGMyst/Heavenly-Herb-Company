@@ -5,20 +5,20 @@
 
 ## Introduction
 
-Live project can be found at [Heavenly Herb Company](heavenly-herb-company.herokuapp.com/)
+Live project can be found at [Heavenly Herb Company](https://heavenly-herb-company.herokuapp.com)
 
 This an e-commerce website developed by Hugh Padmore. This website was built to be eventually used by heavenly herb company as their live site. The company
 sells natural, homemade herbal products. 
 
 ## Table of Contents:
 
-1. [UX](#UX)
+1. [UX](#UX-(user-experience))
     1. [Project Goals](#project-goals)
     2. [User Goals](#user-goals)
     3. [User Stories](#user-Stories)
     4. [Site Owner Goals](#site-owner-goals)
 2. [User Requirements and Expectations](#user-requirements-and-expectations)
-    1. [Requirements](#requirements)
+    1. [Requirements](#Requirements)
     2. [Expectations](#expectations)
 3. [Wireframes](#wireframes)
 4. [Features](#Features)
@@ -29,9 +29,9 @@ sells natural, homemade herbal products.
     2. [Data Models](#data-models)
 6. [Technologies](#Technologies)
     1. [Languages](#Languages)
-    2. [Libraries and frameworks](#Libraries-and-frameworks)
+    2. [Libraries](#Libraries)
     3. [Tools](#Tools)
-    4. [Databases](#Databses)
+    4. [Databases](#Databases)
 7. [Testing](#Testing)
 
 8. [Deployment](#Deployment)
@@ -39,7 +39,7 @@ sells natural, homemade herbal products.
     2. [Deployment to Heroku](#Deployment-to-Heroku)
 6. [Credits](#Credits)
     1. [Media](#Media)
-7. [Acknowledgment](#Acknowledgment)
+7. [Acknowledgments](#Acknowledgments)
 
 ## UX (User Experience)
 
@@ -75,7 +75,7 @@ As a superuser:
 
 ## User Requirements and Expectations:
 
-**Requirements:**
+###**Requirements:**
 
 - Navigate through the pages of the website intuitively.
 - The content displayed in a visually appealing manner.
@@ -84,7 +84,7 @@ As a superuser:
 - Buy items from the checkout safely and securely.
 - View past orders and user details in profile section.
 
-**Expectations:**
+###**Expectations:**
 
 - Navigation takes the user directly to the desired page of the website.
 - The users' payment data will not be kept in the website's database.
@@ -366,4 +366,4 @@ To make the deployment of this application to `Heroku` you will need to do the f
 
 - The code for the navbar transitioning on scroll came from https://css-tricks.com/styling-based-on-scroll-position/
 
-- I used a lot of code from the Code institute example walkthrough [Boutique Ado](https://github.com/ckz8780/boutique_ado_v1/tree/250e2c2b8e43cccb56b4721cd8a8bd4de6686546) This was to help structure this very large project but also to ensure that processes like logging in and making payments are secure and well tested, particularly since in the long wrong this site is going to go live. The site is very personalised and features lots of functionality not covered in the course. 
+- I used a lot of code from the Code institute example walkthrough [Boutique Ado](https://github.com/ckz8780/boutique_ado_v1/tree/250e2c2b8e43cccb56b4721cd8a8bd4de6686546) This was to help structure this very large project but also to ensure that processes like logging in and making payments are secure and well tested, particularly since in the long term this site is going to go live. The site is very personalised and features lots of functionality not covered in the course. 

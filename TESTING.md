@@ -1,4 +1,18 @@
-### Validators
+#Testing  
+
+1. [Validators](#Validators)
+    1. [Exceptions](#Exceptions)
+2. [Responsiveness](#Responsiveness)
+    1. [Devices/Screen Size](#Devices/screen-size)
+    2. [Browsers](#Browsers)
+3. [Functionality Tests](#Functionality-tests)
+    1. [Note for the Assessor](#Note-for-the-assessor)
+
+4. [Bugs](#bugs)
+    1. [Solved Bugs](#Solved-bugs)
+    2. [Unsolved Bugs](#Unsolved-bugs)
+
+## Validators
 
 - HTML was checked on [HTML Validator](https://validator.w3.org/).
 - CSS was checked on [CSS Validator](http://csslint.net/).
@@ -12,7 +26,7 @@ Certain code which returns an error when passed through a validator have been le
 - Line too long where making a new line isn't possible - For python files certain lines shouldn't be broken i.e. split_filtered_products=all_products.filter(category__name__in=split_category)[start_point:end_point]
 - HTML Templates extending the base: All templates, outside of the base, are missing the the header and !DOCTYPE so show an error on being passed through the validator. 
 
-### Responsiveness and Functionality 
+## Responsiveness 
 
 ### Devices/Screen Size
 - Monitor _1920x1080_
@@ -31,7 +45,7 @@ Certain code which returns an error when passed through a validator have been le
 
 Since Internet Explorer will be deprecated later in the year, this site has not been optimised for Internet Explorer
 
-### Tests
+## Functionality Tests
 
 **Navbar Links**
 
@@ -193,7 +207,7 @@ Since Internet Explorer will be deprecated later in the year, this site has not 
 - **Plan 1:** Superusers can remove products from the products page.
 - **Result:** This test has passed.
 
-## Note for the assessor
+### Note for the assessor
 
 
 To test the CRUDs functionalities as a **normal user**:
