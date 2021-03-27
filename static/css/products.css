@@ -37,12 +37,14 @@ h5{
     border: solid 3px #0c1c35;
     border-radius: 10px;
     box-shadow: 0 2px 1px 1px rgba(53, 51, 51, 0.53);
+    flex-wrap: wrap;
 }
 
 .product-img{
     height: 190px;
-    width: 150px;
+    width: 100%;
     border-radius: 5px;
+    max-width: 140px;
 }
 
 .card-right-box{
@@ -52,16 +54,25 @@ h5{
 
 .text-box{
     width: 100%;
+    margin-bottom: 40px;
 }
 
-
-.add-item-btn{
+.products-btn{
     width: 100%;
-    margin-top: 5px;
+    font-size: 15px;
     padding: 5px 0;
     border-radius: 10px;
     text-align: center;
     background-color: #18451C;
+}
+
+.card-width-left{
+    width: 30%;
+}
+
+.card-width-right{
+    width: 70%;
+    position: relative;
 }
 
 .add-item-text{
@@ -136,7 +147,16 @@ h5{
 
 .product-name{
     color: black;
-    font-size: 17px;
+    font-size: 16px;
+}
+
+.products-btn-box{
+    width:100%;
+    position: absolute;
+    bottom: 0
+}
+.product-price{
+    font-size: 12px;
 }
 /* -----------------------------------PRODUCT_DETAIL---------------------------- */
 .pd-sub-nav{
@@ -183,16 +203,31 @@ h5{
 .product-card{
     width: 48%;
 }
+
+.card-width-left{
+    width: 25%;
 }
+
+.card-width-right{
+    width: 75%;
+}
+}
+
 @media only screen and (max-width: 991px){
 .product-card{
     width: 100%;
     margin-bottom: 15px;
     padding-bottom: 10px;
-    flex-wrap: nowrap;
 }
 .sub-nav{
     display:none;
+}
+.card-width-left{
+    width: 20%;
+}
+
+.card-width-right{
+    width: 80%;
 }
 }
 /*-----------------------------------------PHONE PORTRAIT MEDIA QUERY-----------------------------------------*/
@@ -203,8 +238,7 @@ h5{
 
 .product-img{
     padding: 1px 2px;
-    height: 140px;
-    width: 100px;
+    max-width: 130px;
 }  
 .step-links{
     font-size: 14px;
@@ -267,7 +301,7 @@ p {
     font-size: 11px;
 }
 
-.add-item-btn{
+.products-btn{
     padding: 2px 0 7px;
 }
 
@@ -280,5 +314,30 @@ p {
     padding-bottom: 25px;
     display: flex;
     justify-content: center;
+}
+
+.card-width-left{
+    width: 25%;
+}
+
+.card-width-right{
+    width: 75%;
+    position: relative;
+}
+}
+
+@media only screen and (max-width: 576px){
+.text-box{
+    margin-bottom: 0;
+}
+}
+@media only screen and (max-width: 450px){
+
+.card-width-left{
+    width: 40%;
+}
+
+.card-width-right{
+    width: 60%;
 }
 }

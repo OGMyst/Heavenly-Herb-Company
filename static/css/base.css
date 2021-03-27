@@ -28,11 +28,6 @@ body{
     font-size: 22px;
 }
 
-input{
-    font-family: 'Noto Sans HK', sans-serif;
-    font-weight: 300;
-}
-
 h1, h3, h5, h6, .btn{
     font-weight: 700;
 }
