@@ -81,9 +81,11 @@ def edit_address(request, address_number):
 def delete_address(request, address_id):
     """ Delete an address from user profile """
 
-    if not request.user.is_superuser:
+    if not request.user.is_authenticated:
         messages.error(request, 'Sorry, you must be logged in to do that.')
         return redirect(reverse('home'))
 
+    address = get_object_or_404(Address, address_number=address_id)
+    address.delete()
     messages.success(request, 'Address deleted!')
     return redirect(reverse('profile'))
