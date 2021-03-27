@@ -29,6 +29,16 @@ html {
 p {
     margin-bottom: 2px;
 }
+
+.update-btn{
+    font-size: 16px;
+    padding: 5px 10px 8px;
+    float: right;
+}
+
+.control-group{
+    width: 100%;
+}
 @media only screen and (max-width: 768px){
 .page-divider{
     border: none;
