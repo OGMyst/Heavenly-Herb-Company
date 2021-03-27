@@ -1,9 +1,9 @@
-#Testing  
+# Testing  
 
 1. [Validators](#Validators)
     1. [Exceptions](#Exceptions)
 2. [Responsiveness](#Responsiveness)
-    1. [Devices/Screen Size](#Devices/screen-size)
+    1. [Devices](#Devices)
     2. [Browsers](#Browsers)
 3. [Functionality Tests](#Functionality-tests)
     1. [Note for the Assessor](#Note-for-the-assessor)
@@ -28,7 +28,7 @@ Certain code which returns an error when passed through a validator have been le
 
 ## Responsiveness 
 
-### Devices/Screen Size
+### Devices
 - Monitor _1920x1080_
 - Macbook Pro 2015
 - Windows 10 Laptop _1366x768_

@@ -12,7 +12,7 @@ sells natural, homemade herbal products.
 
 ## Table of Contents:
 
-1. [UX](#UX-(user-experience))
+1. [UX](#UX)
     1. [Project Goals](#project-goals)
     2. [User Goals](#user-goals)
     3. [User Stories](#user-Stories)
@@ -41,7 +41,7 @@ sells natural, homemade herbal products.
     1. [Media](#Media)
 7. [Acknowledgments](#Acknowledgments)
 
-## UX (User Experience)
+## UX
 
 ### Project Goals
 
@@ -75,7 +75,7 @@ As a superuser:
 
 ## User Requirements and Expectations:
 
-###**Requirements:**
+### **Requirements:**
 
 - Navigate through the pages of the website intuitively.
 - The content displayed in a visually appealing manner.
@@ -84,7 +84,7 @@ As a superuser:
 - Buy items from the checkout safely and securely.
 - View past orders and user details in profile section.
 
-###**Expectations:**
+### **Expectations:**
 
 - Navigation takes the user directly to the desired page of the website.
 - The users' payment data will not be kept in the website's database.
@@ -96,7 +96,7 @@ As a superuser:
 ## Wireframes
 
 The wireframes for this project were created on [Figma](https://figma.com).
-View my wireframes [here](https://github.com/OGMyst/Heavenly-Herb-Company/blob/master/wireframes).
+View my wireframes [here](https://www.dropbox.com/sh/ubsyfakp52eyzzp/AAB93rmfxmhLiIrMnD9aagmaa?dl=0).
 
 ## Features
 

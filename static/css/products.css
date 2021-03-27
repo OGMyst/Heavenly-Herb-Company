@@ -133,6 +133,11 @@ h5{
 .pagination{
     padding: 15px 0 40px;
 }
+
+.product-name{
+    color: black;
+    font-size: 17px;
+}
 /* -----------------------------------PRODUCT_DETAIL---------------------------- */
 .pd-sub-nav{
     margin-top: 83px;
@@ -174,13 +179,26 @@ h5{
     position: relative;
     float: right;
 }
-/*-----------------------------------------PHONE PORTRAIT MEDIA QUERY-----------------------------------------*/
-@media only screen and (max-width: 450px){
+@media only screen and (max-width: 1366px){
+.product-card{
+    width: 48%;
+}
+}
+@media only screen and (max-width: 991px){
 .product-card{
     width: 100%;
     margin-bottom: 15px;
     padding-bottom: 10px;
     flex-wrap: nowrap;
+}
+.sub-nav{
+    display:none;
+}
+}
+/*-----------------------------------------PHONE PORTRAIT MEDIA QUERY-----------------------------------------*/
+@media only screen and (max-width: 768px){
+.product-name{
+    font-size: 15px;
 }
 
 .product-img{

@@ -14,7 +14,7 @@
 <!----------------------------- SUB-NAVBAR -------------------------->
     <div class="container-fluid bg-blue">
         <div class="row sub-nav mobile-hidden">
-            <div class="col-1">
+            <div class="col-xl-1 col-2">
                 <div class="dropdown">
                     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton-sort" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Sort By
@@ -27,7 +27,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-7 ">
+            <div class="col-xl-7 col-6">
                 <div class="dropdown">
                     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton-categories" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         {% if current_category %}
@@ -103,7 +103,7 @@
                             </div>
                             <div class="card-right-box">
                                 <div class="text-box">
-                                    <h6>{{ product.name }}</h6>
+                                    <a class="product-name">{{ product.name }}</a>
                                     <p>£{{ product.price }}</p>
                                     <p class="product-desc">
                                         {{ product.description|truncatechars:180 }}
