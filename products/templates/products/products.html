@@ -95,7 +95,7 @@
                             <div class="card-width-right">
                                 <div class="card-right-box">
                                     <div class="text-box">
-                                        <a class="product-name" href="url 'product_detail' product.id %}">{{ product.name }}</a>
+                                        <a class="product-name" href="{% url 'product_detail' product.id %}">{{ product.name }}</a>
                                         <p class="product-price">£{{ product.price }}</p>
                                         <p class="product-desc">
                                             {{ product.description|truncatechars:180 }}
