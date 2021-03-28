@@ -24,7 +24,7 @@
                         <p class="mb-1 mt-0 small text-muted">Item</p>
                     </div>
                     <div class="col-3 text-right">
-                        <p class="mb-1 mt-0 small text-muted">Subtotal</p>
+                        <p class="mb-1 mt-0">Subtotal</p>
                     </div>
                 </div>
                 {% for item in bag_items %}
@@ -39,7 +39,7 @@
                             <p class="my-0 small text-muted">Qty: {{ item.quantity }}</p>
                         </div>
                         <div class="col-3 text-right">
-                            <p class="my-0 small text-muted">£{{ item.sub_total  }}</p>
+                            <p class="my-0">£{{ item.sub_total  }}</p>
                         </div>
                     </div>
                 {% endfor %}
