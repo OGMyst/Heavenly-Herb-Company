@@ -8,26 +8,26 @@
 
 {% block page_header %}
     <div class="container-fluid margin-for-nav">
-        <h1>Product Management - Add Product</h1>
+        <h1 class="header-font">Product Management - Add Product</h1>
     </div>
 {% endblock %}
 
 {% block content %}
-    <div class="container-fluid bg-off-white d-flex pd-container">
+    <div class="container-fluid bg-off-white d-flex add-product-container blue-border">
             <div class="col-12">
-                <form method="POST" action="{% url 'add_product' %}" class="add_product_form mb-2 d-flex" enctype="multipart/form-data">
+                <form method="POST" action="{% url 'add_product' %}" class="add_product_form mb-2 d-flex justify-content-center" enctype="multipart/form-data">
                     {% csrf_token %}
                     {% for field in form %}
                         {% if field.name != 'image' %}
                             {{ field | as_crispy_field }}
                         {% else %}
-                            <div>
+                            <div class="control-group">
                                 {{ field }}
                             </div>
                         {% endif %}
                     {% endfor %}
                     <div class="text-right control-group add-product-confirm">
-                        <a class="btn" href="{% url 'products' %}">Cancel</a>
+                        <a class="btn cancel-btn" href="{% url 'products' %}">Cancel</a>
                         <button class="btn add-product-cta green-button gold-text" type="submit">Add Product</button>
                     </div>
                 </form>

@@ -4,7 +4,8 @@
 
 .control-group{
     width: 30%;
-    margin-right: 3%;
+    margin-right: 10px;
+    margin-left: 10px;
 }
 
 .add-product-confirm{
@@ -13,4 +14,42 @@
 
 .add-product-cta:hover{
     color: #ffffff;
+}
+
+.add-product-cta{
+    font-size: 16px;
+    padding: 5px 15px
+}
+
+.btn-file{
+    padding: 0 0;
+    width: 100%
+}
+
+.add-product-container{
+    padding: 35px 10px;
+    min-height: calc(100vh - 220px);  
+}
+
+@media only screen and (max-width: 991px){
+.header-font{
+    font-size: 40px;
+}
+}
+
+@media only screen and (max-width: 450px){
+.control-group{
+    width: 100%;
+    margin-right: 0px;
+    margin-left: 0px;
+}
+
+.cancel-btn{
+    padding: 0 0;
+    float: left
+}
+
+.header-font{
+    font-size: 30px;
+}
 }
