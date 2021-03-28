@@ -89,6 +89,14 @@
     font-size: 17px;
     width: 220px
 }
+
+.products-container{
+    min-height: calc(100vh - 220px);
+}
+
+.logo-font{
+    font-weight: 700
+}
 /* ----------------------------LOADING OVERLAY------------------------ */
 #loading-overlay {
 	display: none;

@@ -171,6 +171,10 @@ footer{
      box-shadow: -20px 30px 40px;
 }
 
+.toast-body{
+    font-size: 12px
+}
+
 .arrow-up {
     width: 0; 
     height: 0; 
