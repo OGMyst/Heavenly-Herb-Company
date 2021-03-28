@@ -18,5 +18,5 @@ class ProductForm(forms.ModelForm):
         friendly_names = [(c.id, c.get_friendly_name()) for c in categories]
 
         self.fields['category'].choices = friendly_names
-        for field in self.fields.items():
-            field.widget.attrs['class'] = 'product-form-input'
+        for field in self.fields:
+           self.fields[field].widget.attrs['class'] = 'product-form-input'

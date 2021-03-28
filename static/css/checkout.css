@@ -19,6 +19,9 @@
     animation-duration: 1.575s;
 }
 
+.keep-shopping:hover{
+    color: #ffffff;
+}
 @keyframes changer {
     0% {color: black;}
     50% {

@@ -158,6 +158,11 @@ h5{
 .product-price{
     font-size: 12px;
 }
+
+.add-item-input:hover,
+.products-btn:hover{
+    color: #ffffff;
+}
 /* -----------------------------------PRODUCT_DETAIL---------------------------- */
 .pd-sub-nav{
     margin-top: 83px;

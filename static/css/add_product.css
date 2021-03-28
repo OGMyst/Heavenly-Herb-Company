@@ -10,3 +10,7 @@
 .add-product-confirm{
     padding-top: 30px;
 }
+
+.add-product-cta:hover{
+    color: #ffffff;
+}
