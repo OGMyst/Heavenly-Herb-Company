@@ -23,7 +23,8 @@
 
 .btn-file{
     padding: 0 0;
-    width: 100%
+    width: 100%;
+    order: -1;
 }
 
 .add-product-container{
@@ -31,6 +32,18 @@
     min-height: calc(100vh - 220px);  
 }
 
+.image-section{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.image-section > p {
+    width: 100%
+}
+
+.custom-control{
+    width: 100%
+}
 @media only screen and (max-width: 991px){
 .header-font{
     font-size: 40px;

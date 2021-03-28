@@ -68,7 +68,7 @@
                     </div>
                 </form>
                 {% if request.user.is_superuser %}
-                <div class="edit-delete-product">
+                <div class="edit-delete-pd">
                     <a href="{% url 'edit_product' product.id %}">Edit</a> | 
                     <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
                 </div>
