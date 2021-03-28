@@ -12,11 +12,6 @@ class ContactForm(forms.ModelForm):
                   'message',
                   )
 
-    # user_email = forms.EmailField(label="Your Email", required=True,
-    #                               widget=forms.TextInput())
-    # subject = forms.CharField(required=True, widget=forms.TextInput())
-    # message = forms.CharField(required=True, widget=forms.Textarea())
-
     def __init__(self, *args, **kwargs):
         """
         Add placeholders and classes, remove auto-generated
