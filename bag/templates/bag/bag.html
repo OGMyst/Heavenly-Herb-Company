@@ -13,9 +13,10 @@
 {% endblock %}
 
 {% block content %}
-<!----------------------------- Basket -------------------------->
+<!----------------------------- BAG TABLE -------------------------->
 
     <div class="container-fluid bg-off-white d-flex blue-border bag-container justify-content-center">
+        <!-------------- TABLE HEADERS ------------->
         {% if bag_items %}
             <div class="basket-box w-100 w-md-75">
                 <div class="row basket-top">
@@ -32,6 +33,7 @@
                         <h6>Sub-Total</h6>
                     </div>
                 </div>
+                <!-------------- TABLE BODY ------------->
                 {% for bag_item in bag_items %}
                     <div class="row item-summary">
                         <div class="col-md-6 col-12 d-flex">
@@ -90,6 +92,7 @@
                         </div>
                     </div>
                 {% endfor %}
+                <!-------------- TABLE BOTTOM ------------->
                 <div class="row basket-top">
                     <div class="col-6 d-none d-md-block">
                     </div>
@@ -138,6 +141,7 @@
                 </div>
             </div>
         {% else %}
+        <!-------------- NO ITEMS IN BAG ------------->
             <div class="text-center basket-no-item">
                 <p >There are no items in your basket</p>
                 <button class="btn green-button">

@@ -1,8 +1,8 @@
-from django.shortcuts import render, redirect, HttpResponse, get_object_or_404, reverse
+from django.shortcuts import (render, redirect, HttpResponse,
+                              get_object_or_404, reverse)
 from django.contrib import messages
 
 from products.models import Product
-# Create your views here.
 
 
 def view_bag(request):
@@ -42,8 +42,6 @@ def adjust_bag(request, item_id):
 
     if quantity > 0:
         bag[item_id] = quantity
-        # messages.success(request,
-        #                  f'Updated {product.name} quantity to {bag[item_id]}')
     else:
         bag.pop(item_id)
         messages.success(request, f'Removed {product.name} from your bag')
