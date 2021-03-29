@@ -13,11 +13,11 @@
         <div class="pd-content">
             {% if product.image %}
             <div class="pd-image-container">
-                <img class="pd-image" src="{{ product.image.url }}">
+                <img class="pd-image" src="{{ product.image.url }}" alt="{{ product.name }}">
             </div>
             {% else %}
             <div class="pd-image-container">
-                <img class="pd-image" src="{{ MEDIA_URL }}noimage.jpg" alt="{{ product.name }}">
+                <img class="pd-image" src="https://heavenly-herb-company.s3.amazonaws.com/media/noimage.jpg" alt="{{ product.name }}">
             </div>
             {% endif %}
             <div class="pd-right-container">

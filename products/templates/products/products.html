@@ -87,7 +87,7 @@
                                     </div>
                                     {% else %}
                                     <div class="img-box">
-                                        <img class="product-img" src="{{ MEDIA_URL }}noimage.jpg" alt="{{ product.name }}">
+                                        <img class="product-img" src="https://heavenly-herb-company.s3.amazonaws.com/media/noimage.jpg" alt="{{ product.name }}">
                                     </div>
                                     {% endif %}
                                 </a>
@@ -148,23 +148,23 @@
                 {% endfor%}
             <!----------------------------- PAGINATION -------------------------->
             <div class="w-100 pagination">
-                <span class="step-links w-100 d-flex">
+                <div class="step-links w-100 d-flex">
                     <div class="previous-link text-right">
                         {% if page_obj.has_previous %}
                             <a href="?page=1">&laquo; first</a>
                             <a href="?page={{ page_obj.previous_page_number }}">previous</a>
                         {% endif %}
                     </div>
-                    <span class="current">
+                    <div class="current">
                         Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
-                    </span>
+                    </div>
                     <div class="next-link">
                     {% if page_obj.has_next %}
                         <a href="?page={{ page_obj.next_page_number }}">next</a>
                         <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
                     {% endif %}
                     </div>
-                </span>
+                </div>
             </div>
         </div>
         </div>

@@ -6,7 +6,6 @@ from django.core.paginator import Paginator
 
 from .models import Product, Category
 from .forms import ProductForm
-# Create your views here.
 
 
 def products(request):
@@ -30,9 +29,13 @@ def products(request):
 
         if 'category' in request.GET:
             split_category = request.GET['category'].split(',')
-            filtered_products = all_products.filter(category__name__in=split_category)
-            split_filtered_products = all_products.filter(category__name__in=split_category)[start_point:end_point]
-            current_category = Category.objects.get(name=request.GET['category'])
+            filtered_products = all_products.filter(
+                                category__name__in=split_category)
+            split_filtered_products = all_products.filter(
+                                        category__name__in=split_category
+                                        )[start_point:end_point]
+            current_category = Category.objects.get(
+                                name=request.GET['category'])
 
         if 'sort' in request.GET:
             sort = request.GET['sort']
@@ -43,17 +46,21 @@ def products(request):
                 sortkey = f'-{sortkey}'
 
             filtered_products = all_products.order_by(sortkey)
-            split_filtered_products = all_products.order_by(sortkey)[start_point:end_point]
+            split_filtered_products = all_products.order_by(
+                                      sortkey)[start_point:end_point]
 
         if 'q' in request.GET:
             query = request.GET['q']
             if not query:
-                messages.error(request, "You didn't enter any search criteria!")
+                messages.error(
+                    request, "You didn't enter any search criteria!")
                 return redirect(reverse('products'))
 
-            queries = Q(name__icontains=query) | Q(description__icontains=query)
+            queries = Q(name__icontains=query
+                        ) | Q(description__icontains=query)
             filtered_products = all_products.filter(queries)
-            split_filtered_products = all_products.filter(queries)[start_point:end_point]
+            split_filtered_products = all_products.filter(
+                                      queries)[start_point:end_point]
 
     else:
         filtered_products = all_products
@@ -101,7 +108,9 @@ def add_product(request):
             messages.success(request, 'Successfully added product!')
             return redirect(reverse('add_product'))
         else:
-            messages.error(request, 'Failed to add product. Please ensure the form is valid.')
+            messages.error(
+                request,
+                'Failed to add product. Please ensure the form is valid.')
     else:
         form = ProductForm()
 
@@ -129,7 +138,9 @@ def edit_product(request, product_id):
             messages.success(request, 'Successfully updated product!')
             return redirect(reverse('product_detail', args=[product.id]))
         else:
-            messages.error(request, 'Failed to update product. Please ensure the form is valid.')
+            messages.error(
+                request,
+                'Failed to update product. Please ensure the form is valid.')
     else:
         form = ProductForm(instance=product)
         messages.info(request, f'You are editing {product.name}')
