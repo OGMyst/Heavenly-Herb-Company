@@ -27,6 +27,7 @@ def profile(request):
 
 
 def order_history(request, order_number):
+    """ Display the user's past order confirmations """
     order = get_object_or_404(Order, order_number=order_number)
 
     messages.info(request, (
@@ -55,7 +56,8 @@ def edit_address(request, address_number):
             messages.success(request, 'Address updated successfully')
             return redirect(reverse('profile'))
         else:
-            messages.error(request, 'Update failed. Please ensure the form is valid.')
+            messages.error(
+                request, 'Update failed. Please ensure the form is valid.')
 
     address_form = AddressForm(initial={
         'full_name': address.full_name,

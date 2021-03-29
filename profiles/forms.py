@@ -17,8 +17,7 @@ class AddressForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         """
-        Add placeholders and classes, remove auto-generated
-        labels and set autofocus on first field
+        Add placeholders and classes
         """
         super().__init__(*args, **kwargs)
         placeholders = {
@@ -32,7 +31,6 @@ class AddressForm(forms.ModelForm):
             'phone_number': 'Phone Number',
         }
 
-        # self.fields['street_address_1'].widget.attrs['autofocus'] = True
         for field in self.fields:
             placeholder = placeholders[field]
             self.fields[field].widget.attrs['placeholder'] = placeholder
