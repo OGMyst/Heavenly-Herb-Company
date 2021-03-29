@@ -19,4 +19,4 @@ class ProductForm(forms.ModelForm):
 
         self.fields['category'].choices = friendly_names
         for field in self.fields:
-           self.fields[field].widget.attrs['class'] = 'product-form-input'
+            self.fields[field].widget.attrs['class'] = 'product-form-input'

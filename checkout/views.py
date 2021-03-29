@@ -86,12 +86,13 @@ def checkout(request):
                                     args=[order.order_number]))
 
         else:
-            messages.error(request, ('There was an error with your form. '
-                                    'Please double check your information.'))
+            messages.error(request, ('There was an error with your form. ' +
+                                     'Please double check your information.'))
     else:
 
         if not bag:
-            messages.error(request, "There's nothing in your bag at the moment")
+            messages.error(request, "There's nothing in" +
+                                    "your bag at the moment")
             return redirect(reverse('products'))
 
         current_bag = bag_contents(request)
@@ -163,7 +164,9 @@ def checkout_success(request, order_number):
                 address_form = AddressForm(address_data)
                 if address_form.is_valid():
                     address_info = address_form.save()
-                    address = get_object_or_404(Address, address_number=address_info.address_number)
+                    address = get_object_or_404(Address,
+                                                address_number=address_info
+                                                .address_number)
                     address.userprofile = profile
                     address.save()
 
