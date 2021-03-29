@@ -15,7 +15,7 @@
 ## Validators
 
 - HTML was checked on [HTML Validator](https://validator.w3.org/).
-- CSS was checked on [CSS Validator](http://csslint.net/).
+- CSS was checked on [CSS Validator](https://jigsaw.w3.org/css-validator/).
 - JavaScript was checked on [JS Hint Validator](https://jshint.com/).
 - Python was checked on [PEP8 online check](http://pep8online.com/).
 

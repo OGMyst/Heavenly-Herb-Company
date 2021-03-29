@@ -21,7 +21,7 @@ const debounce = (fn) => {
       fn(...params);
     });
 
-  } 
+  };
 };
 
 
@@ -29,7 +29,7 @@ const debounce = (fn) => {
 // so we can use it in our stylesheets
 const storeScroll = () => {
   document.documentElement.dataset.scroll = window.scrollY;
-}
+};
 
 // Listen for new scroll events, here we debounce our `storeScroll` function
 document.addEventListener('scroll', debounce(storeScroll), { passive: true });

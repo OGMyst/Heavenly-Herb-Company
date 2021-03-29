@@ -3,7 +3,7 @@ $(document).ready(function(){
     var allQtyInputs = $('.qty_input');
     for(var i = 0; i < allQtyInputs.length; i++){
         var itemId = $(allQtyInputs[i]).data('item_id');
-        handleEnableDisable(itemId)
+        handleEnableDisable(itemId);
     }
         
 });
@@ -15,26 +15,26 @@ function handleEnableDisable(itemId) {
         var plusDisabled = currentValue > 98;
         $(`#decrement-qty_${itemId}`).prop('disabled', minusDisabled);
         $(`#increment-qty_${itemId}`).prop('disabled', plusDisabled);
-    }
+}
 
-    // Increment quantity
-    function incrementQty(buttonId){
-        incrementButton = document.getElementById(buttonId);
+// Increment quantity
+function incrementQty(buttonId){
+    incrementButton = document.getElementById(buttonId);
        
-        var closestInput = $(incrementButton).closest('.input-group').find('.qty_input')[0];
-        var currentValue = parseInt($(closestInput).val());
-        $(closestInput).val(currentValue + 1);
-        var itemId = $(closestInput).data('item_id');
-        handleEnableDisable(itemId);
-    };
+    var closestInput = $(incrementButton).closest('.input-group').find('.qty_input')[0];
+    var currentValue = parseInt($(closestInput).val());
+    $(closestInput).val(currentValue + 1);
+    var itemId = $(closestInput).data('item_id');
+    handleEnableDisable(itemId);
+}
 
-    // Decrement quantity
-    function decrementQty(buttonId){
-        decrementButton = document.getElementById(buttonId);
+// Decrement quantity
+function decrementQty(buttonId){
+    decrementButton = document.getElementById(buttonId);
        
-        var closestInput = $(decrementButton).closest('.input-group').find('.qty_input')[0];
-        var currentValue = parseInt($(closestInput).val());
-        $(closestInput).val(currentValue - 1);
-        var itemId = $(closestInput).data('item_id');
-        handleEnableDisable(itemId);
-    };
+    var closestInput = $(decrementButton).closest('.input-group').find('.qty_input')[0];
+    var currentValue = parseInt($(closestInput).val());
+    $(closestInput).val(currentValue - 1);
+    var itemId = $(closestInput).data('item_id');
+    handleEnableDisable(itemId);
+}
