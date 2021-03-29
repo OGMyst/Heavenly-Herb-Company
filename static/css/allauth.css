@@ -16,6 +16,10 @@ html {
     margin-bottom: 20px;
 }
 
+.allauth-container{
+    min-width: 400px;
+}
+
 .textinput{
     border-radius: 5px;
     border: solid 2px black;
@@ -23,7 +27,7 @@ html {
 }
 
 .allauth-form-inner-content{
-    padding: 40px;
+    padding: 50px;
     border: 3px solid #7196CE;
     border-radius: 10px;
     width: 110%;
@@ -239,4 +243,7 @@ html {
     font-size: 14px;
 }
 
+.allauth-container{
+    min-width: 350px;
+}
 }
