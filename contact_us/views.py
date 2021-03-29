@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, reverse
+from django.shortcuts import render
 from django.contrib import messages
 
 from .forms import ContactForm
@@ -14,18 +14,16 @@ def contact_us(request):
         if contact_form.is_valid():
             contact_us = contact_form.save(commit=False)
             contact_us.save()
-            messages.success(request, 'Thank you for your message. We will be in touch as soon as we can.')
+            messages.success(request, 'Thank you for your message.' +
+                             'We will be in touch as soon as we can.')
         else:
-            messages.error(request, 'Something went wrong when processing your message. Please check you have filled in all the fields and that your email address is correct')
+            messages.error(request, 'Something went wrong when processing' +
+                           'your message. Please check you have filled in' +
+                           'all the fields and that your email address is' +
+                           'correct')
 
     context = {
             'contact_form': contact_form
     }
 
     return render(request, template, context)
-
-
-def about_us(request):
-
-    """ A view to return the About Us page """
-    return render(request, 'contact_us/about_us.html')

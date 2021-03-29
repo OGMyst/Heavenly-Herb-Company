@@ -2,13 +2,13 @@ import uuid
 
 from django.db import models
 
-# Create your models here.
-
 
 class ContactUs(models.Model):
-    message_number = models.CharField(max_length=32, null=False, editable=False)
+    message_number = models.CharField(max_length=32, null=False,
+                                      editable=False)
     user_email = models.EmailField(max_length=254)
-    subject = models.CharField(max_length=254, null=True, blank=True)
+    subject = models.CharField(max_length=254, null=True,
+                               blank=True)
     message = models.TextField()
 
     def _generate_message_number(self):
