@@ -53,16 +53,17 @@ of the products so I have used Noto Sans Italic to give the text a handwritten l
 
 - Browse herbal products
 - Purchase herbal products
-- To learn more 
+- To learn more about the company 
 
 #### **User Stories:**
 
-- As a user, I expect to browse the products the website offers by category or price.
-- As a user, I expect to be able to easily navigate the site using the menu.
-- As a user, I expect to be able to learn and understand more about the products before purchase.
-- As a user, I expect to be able to add products to the shopping bag and pay for it.
-- As a user, I expect to be able to register to the website so I can check my previous purchases.
-- As a user, I expect to be able to reset or change my password easily and securely.
+As a user:
+-  I expect to browse the products the website offers by category or price.
+-  I expect to be able to easily navigate the site using the menu.
+-  I expect to be able to learn and understand more about the products before purchase.
+-  I expect to be able to add products to the shopping bag and pay for it.
+-  I expect to be able to register to the website so I can check my previous purchases.
+-  I expect to be able to reset or change my password easily and securely.
 
 #### **Site Owner Goals:**
 

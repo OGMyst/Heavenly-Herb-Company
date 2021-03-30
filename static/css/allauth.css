@@ -30,7 +30,7 @@ html {
     padding: 50px;
     border: 3px solid #7196CE;
     border-radius: 10px;
-    width: 110%;
+    width: 100%;
 }
 
 .create-account-link{
@@ -52,6 +52,10 @@ html {
     color: #FBD300;
     background-color: #18451C;  
     border: none;    
+}
+
+.sign-out{
+    width: 100%;
 }
 .secondaryAction:hover,
 .primaryAction:hover{

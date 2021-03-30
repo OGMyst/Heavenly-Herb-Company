@@ -1,10 +1,10 @@
 # Testing  
 
 1. [Validators](#Validators)
-    1. [Exceptions](#Exceptions)
 2. [Responsiveness](#Responsiveness)
     1. [Devices](#Devices)
     2. [Browsers](#Browsers)
+3. [User and Superuser Story Tests](#User-and-superuser-story-tests)
 3. [Functionality Tests](#Functionality-tests)
     1. [Note for the Assessor](#Note-for-the-assessor)
 
@@ -18,13 +18,6 @@
 - CSS was checked on [CSS Validator](https://jigsaw.w3.org/css-validator/).
 - JavaScript was checked on [JS Hint Validator](https://jshint.com/).
 - Python was checked on [PEP8 online check](http://pep8online.com/).
-
-### Exceptions
-Certain code which returns an error when passed through a validator have been left in because they fall under these categories:
-- Code provided by libraries - in settings.py there is code that are too long which is how it was written when the django project was created.
-- Code taken from the code institute example project - Unless I thought it broke clean code rules unintentionally I didn't change the code to follow the guidelines since I trust the course to provide clean code.
-- Line too long where making a new line isn't possible - For python files certain lines shouldn't be broken i.e. split_filtered_products=all_products.filter(category__name__in=split_category)[start_point:end_point]
-- HTML Templates extending the base: All templates, outside of the base, are missing the the header and !DOCTYPE so show an error on being passed through the validator. 
 
 ## Responsiveness 
 
@@ -44,6 +37,37 @@ Certain code which returns an error when passed through a validator have been le
 - Edge
 
 Since Internet Explorer will be deprecated later in the year, this site has not been optimised for Internet Explorer
+
+## User and Superuser Story Tests
+
+#### **User Stories:**
+
+As a user:
+-  **Test:** I expect to browse the products the website offers by category or price.
+-  **Result:** Users can click on filters which return the correct results for that filter **Passed**
+-  **Test:** I expect to be able to easily navigate the site using the menu. 
+-  **Result:** The Navbar is sticky and contains links to all the main pages in the site. **Passed**
+-  **Test:** I expect to be able to learn and understand more about the products before purchase.
+-  **Result:** PDPs give users information about the ingredients, directions of use and a full description **Passed**
+-  **Test:** I expect to be able to add products to the shopping bag and place and order.
+-  **Result:** Users can add products which will show them their updated bag. They can then go through to purchase those items **Passed**
+-  **Test:** I expect to be able to register to the website so I can check my previous purchases.
+-  **Result:** The site provides a authentication feature which users can use to store their previous orders **Passed**
+-  **Test:**  I expect to be able to reset or change my password easily and securely. 
+-  **Result:** Through the profiles page, users can change their password or they can receive a reset link to their email via the login page **Passed**
+
+#### **Site Owner Goals:**
+
+As a superuser:
+
+-  **Test:** I expect to be able to log in as a superuser and create, update and delete products on the website.
+-  **Result:** Superusers can add products from product management and edit and delete products from the products page. 
+-  **Test:** I expect to provide users with a safe and secure e-commerce platform.
+-  **Result:** The site uses a third-party authentication and payment process and their payment info is never stored in the site's database
+-  **Test:** I expect to provide users with clear instructions on how to use the products.
+-  **Result:** PDPs feature directions for use so that customers can understand how to safely use the product before purchase.
+-  **Test:** I expect to be able to receive feedback from customers.
+-  **Result:** The contact us form saves users messages and email in the site admin so that the store owners can view messages and respond.
 
 ## Functionality Tests
 
@@ -214,13 +238,13 @@ To test the CRUDs functionalities as a **normal user**:
 
 | **Username** | **Password** |
 | ------------ | ------------ |
-| testuser     | tester232    |
+| testuser     | newtester232 |
 
 To test the CRUDs functionalities as **superuser**:
 
-| **Username**  | **Password**  |
-| ------------- | ------------- |
-| testsuperuser | supertester232|
+| **Username**  | **Password**    |
+| ------------- | --------------- | 
+| testsuperuser | 7DCgkufh7hCXNyp |
 
 To purchase a product, use the information below:
 
@@ -259,5 +283,4 @@ To purchase a product, use the information below:
 ### Unsolved bugs
 
 - Users can add more than 99 units of a product by typing it in.
-- Forms on allauth templates are appearing squished horizontally - still trying to find on what screens/browsers on which this occurs.
 - Pages using white backgrounds are not always covering the remaining viewport height. This bug has been partly fixed using the calc attribute with “vh” but has not yet been correctly applied for all instances.

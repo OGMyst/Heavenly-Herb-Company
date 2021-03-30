@@ -18,7 +18,7 @@
             <div class="bag-notification-wrapper">
                 {% for bag_item in bag_items %}
                     <div class="row">
-                        {% if product.image.url %}
+                        {% if product.image %}
                         <div class="col-3 my-1"> 
                             <img class="w-100" src="{{ bag_item.product.image.url }}" alt="{{ bag_item.product.name }}">
                         </div>
