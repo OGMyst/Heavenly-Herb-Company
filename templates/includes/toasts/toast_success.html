@@ -18,9 +18,15 @@
             <div class="bag-notification-wrapper">
                 {% for bag_item in bag_items %}
                     <div class="row">
+                        {% if product.image.url %}
                         <div class="col-3 my-1"> 
                             <img class="w-100" src="{{ bag_item.product.image.url }}" alt="{{ bag_item.product.name }}">
                         </div>
+                        {% else %}
+                        <div class="col-3 my-1"> 
+                            <img class="w-100" src="https://heavenly-herb-company.s3.amazonaws.com/media/noimage.jpg" alt="{{ bag_item.product.name }}">
+                        </div>
+                        {% endif %}
                         <div class="col-9">
                             <p class="my-0 font-s-14"><strong>{{ bag_item.product.name }}</strong></p>
                             <p class="my-0 small text-muted">Qty: {{ bag_item.quantity }}</p>

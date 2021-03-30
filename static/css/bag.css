@@ -13,6 +13,10 @@ html {
     font-size: 1.2;
 }
 
+.no-items:hover{
+    color: #ffffff;
+}
+
 .basket-box{
     width: 75%;
 }
