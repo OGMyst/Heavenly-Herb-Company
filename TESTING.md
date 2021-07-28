@@ -20,7 +20,7 @@
 - Python was checked on [PEP8 online check](http://pep8online.com/).
 
 ## Responsiveness 
-
+ Trying out VS Code
 ### Devices
 - Monitor _1920x1080_
 - Macbook Pro 2015
